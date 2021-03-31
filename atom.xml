@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
-    <title>Gridea</title>
-    <updated>2021-03-31T17:25:40.285Z</updated>
+    <title>杰</title>
+    <updated>2021-03-31T17:26:55.247Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>前端探索</subtitle>
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, 杰</rights>
     <entry>
         <title type="html"><![CDATA[第一次使用Gridea]]></title>
         <id>https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/</id>
