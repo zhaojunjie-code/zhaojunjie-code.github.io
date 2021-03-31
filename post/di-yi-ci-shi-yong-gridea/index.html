@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>第一次使用Gridea | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhaojunjie-code.github.io//favicon.ico?v=1617211529263">
+<link rel="stylesheet" href="https://zhaojunjie-code.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="2021/4/1 0:08
+终于写下了第一篇博客，为前端的学习做好了准备
+斜体字
+粗体字
+粗斜体文本
+插入斜线
+
+删除文字
+带上下划线
+添加脚注
+长沙理工大学[1]
+有序列表与无序列表，一定要有一个空格
+
+第一项
+第二项
+第三项
+
+
+第三项..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhaojunjie-code.github.io/">
+        <img src="https://zhaojunjie-code.github.io//images/avatar.png?v=1617211529263" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhaojunjie-code.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">第一次使用Gridea</h2>
+            <div class="post-date">2021-04-01</div>
+            
+            <div class="post-content" v-pre>
+              <p>2021/4/1 0:08<br>
+终于写下了第一篇博客，为前端的学习做好了准备<br>
+<em>斜体字</em><br>
+<strong>粗体字</strong><br>
+<em><strong>粗斜体文本</strong></em><br>
+<em>插入斜线</em></p>
+<hr>
+<p><s>删除文字</s><br>
+<u>带上下划线</u><br>
+<em>添加脚注</em><br>
+长沙理工大学<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>有序列表与无序列表，一定要有一个空格</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第三项</li>
+<li>第四项</li>
+<li>第五项</li>
+</ul>
+<ul>
+<li>第六项</li>
+<li>第七项</li>
+<li>第八项</li>
+</ul>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+<li>第四项，嵌套使用
+<ul>
+<li>新的一项，要留四个空格</li>
+<li>新的一项，要留四个空格</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>区块</p>
+<blockquote>
+<p>第一次嵌套</p>
+<blockquote>
+<p>第二次嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>区块中使用列表</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+</ul>
+</blockquote>
+<p>列表中使用区块</p>
+<ol>
+<li>
+<p>第一项</p>
+<blockquote>
+<p>第一区块<br>
+第二区块<br>
+第三区块</p>
+</blockquote>
+</li>
+<li>
+<p>第二项</p>
+<blockquote>
+<p>第一区块<br>
+第二区块<br>
+第三区块</p>
+</blockquote>
+</li>
+</ol>
+<p>代码区块,三个漂符，可以指定语言也可不指定语言<br>
+<code>printf()</code> 函数</p>
+<pre><code class="language-javaScript">$(document).ready(function () {
+    alert('RUNOOB');
+});
+</code></pre>
+<p>基本的链接使用方法<br>
+这是一个<a href="https://www.runoob.com">菜鸟教程</a>的链接<br>
+高级使用方法<br>
+用1设置链接变量<br>
+这是一个链接 [菜鸟教程][1]<br>
+[1]:  https://www.runoob.com/<br>
+两种显示出图片的方法<br>
+<img src="http://static.runoob.com/images/runoob-logo.png" alt="这里填显示不出来的代替文字" loading="lazy"><br>
+<img src="http://static.runoob.com/images/runoob-logo.png" width="50%"></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>双非大学 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
