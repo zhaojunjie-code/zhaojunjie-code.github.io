@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | 杰</title>
+<title>JS实现先阅读协议，后注册 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,8 @@
 
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
+    <meta name="description" content="每当我们想注册账号，或者安装软件时，总有一些细致严谨的公司，他们让你在安装前阅读长长的协议。这背后的原理是什么呢？
+我们先应该了解JS里的 scrollHeight(文档内容实际高度，包括超出视窗的溢出部分)，scrollTop(滚动条相对..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -97,20 +91,47 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">JS实现先阅读协议，后注册</h2>
+            <div class="post-date">2021-04-01</div>
             
             <div class="post-content" v-pre>
-              <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+              <p>每当我们想注册账号，或者安装软件时，总有一些细致严谨的公司，他们让你在安装前阅读长长的协议。这背后的原理是什么呢？<br>
+我们先应该了解JS里的 scrollHeight(文档内容实际高度，包括超出视窗的溢出部分)，scrollTop(滚动条相对于文档顶部的高度，即：滚动距离)，clientHeight(窗口的高度) 属性。</p>
+<h1 id="scrollheight">scrollHeight()</h1>
+<p>scrollHeight()是window的属性<br>
+它是指：文档内容的实际高度，一个网页从页头到页尾。<br>
+#scrollTop()<br>
+scrollTop()也是window的属性<br>
+它是指：垂直滚动条滚动的距离，滚动条下拉的距离。<br>
+#clientHeight()<br>
+clientHeight()是window的属性<br>
+翻译过来就很理解：用户所能看到的高度。<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1617280221051.png" alt="" loading="lazy"><br>
+现在我们应该可以理解背后的原理了吧</p>
+<h1 id="就是当红框框到底的时候即-scrollheight-scrolltop-clientheight">就是当红框框到底的时候，即       scrollHeight - scrollTop = clientHeight</h1>
+<pre><code class="language-javaScript">					//检查垂直滚动条是否滚动到底
+ 				if(info.scrollHeight - info.scrollTop == info.clientHeight){
+ 					//滚动条滚动到底，使表单项可用
+ 					/*
+ 					 * disabled属性可以设置一个元素是否禁用，
+ 					 * 	如果设置为true，则元素禁用
+ 					 * 	如果设置为false，则元素可用
+ 					 */
+ 					inputs[0].disabled = false;
+ 					inputs[1].disabled = false;
+ 				}</code></pre>
 
             </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/">
+                  <h3 class="post-title">
+                    第一次使用Gridea
+                  </h3>
+                </a>
+              </div>
             
 
             

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-01T05:09:52.424Z</updated>
+    <updated>2021-04-01T12:36:47.554Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,39 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[JS实现先阅读协议，后注册]]></title>
+        <id>https://zhaojunjie-code.github.io/post/js-shi-xian-xian-yue-du-xie-yi-hou-zhu-ce/</id>
+        <link href="https://zhaojunjie-code.github.io/post/js-shi-xian-xian-yue-du-xie-yi-hou-zhu-ce/">
+        </link>
+        <updated>2021-04-01T11:42:37.000Z</updated>
+        <content type="html"><![CDATA[<p>每当我们想注册账号，或者安装软件时，总有一些细致严谨的公司，他们让你在安装前阅读长长的协议。这背后的原理是什么呢？<br>
+我们先应该了解JS里的 scrollHeight(文档内容实际高度，包括超出视窗的溢出部分)，scrollTop(滚动条相对于文档顶部的高度，即：滚动距离)，clientHeight(窗口的高度) 属性。</p>
+<h1 id="scrollheight">scrollHeight()</h1>
+<p>scrollHeight()是window的属性<br>
+它是指：文档内容的实际高度，一个网页从页头到页尾。<br>
+#scrollTop()<br>
+scrollTop()也是window的属性<br>
+它是指：垂直滚动条滚动的距离，滚动条下拉的距离。<br>
+#clientHeight()<br>
+clientHeight()是window的属性<br>
+翻译过来就很理解：用户所能看到的高度。<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1617280221051.png" alt="" loading="lazy"><br>
+现在我们应该可以理解背后的原理了吧</p>
+<h1 id="就是当红框框到底的时候即-scrollheight-scrolltop-clientheight">就是当红框框到底的时候，即       scrollHeight - scrollTop = clientHeight</h1>
+<pre><code class="language-javaScript">					//检查垂直滚动条是否滚动到底
+ 				if(info.scrollHeight - info.scrollTop == info.clientHeight){
+ 					//滚动条滚动到底，使表单项可用
+ 					/*
+ 					 * disabled属性可以设置一个元素是否禁用，
+ 					 * 	如果设置为true，则元素禁用
+ 					 * 	如果设置为false，则元素可用
+ 					 */
+ 					inputs[0].disabled = false;
+ 					inputs[1].disabled = false;
+ 				}</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[第一次使用Gridea]]></title>
         <id>https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/</id>
