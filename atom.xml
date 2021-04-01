@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-01T12:36:47.554Z</updated>
+    <updated>2021-04-01T13:54:35.592Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -20,12 +20,12 @@
 我们先应该了解JS里的 scrollHeight(文档内容实际高度，包括超出视窗的溢出部分)，scrollTop(滚动条相对于文档顶部的高度，即：滚动距离)，clientHeight(窗口的高度) 属性。</p>
 <h1 id="scrollheight">scrollHeight()</h1>
 <p>scrollHeight()是window的属性<br>
-它是指：文档内容的实际高度，一个网页从页头到页尾。<br>
-#scrollTop()<br>
-scrollTop()也是window的属性<br>
-它是指：垂直滚动条滚动的距离，滚动条下拉的距离。<br>
-#clientHeight()<br>
-clientHeight()是window的属性<br>
+它是指：文档内容的实际高度，一个网页从页头到页尾。</p>
+<h1 id="scrolltop">scrollTop()</h1>
+<p>scrollTop()也是window的属性<br>
+它是指：垂直滚动条滚动的距离，滚动条下拉的距离。</p>
+<h1 id="clientheight">clientHeight()</h1>
+<p>clientHeight()是window的属性<br>
 翻译过来就很理解：用户所能看到的高度。<br>
 <img src="https://zhaojunjie-code.github.io//post-images/1617280221051.png" alt="" loading="lazy"><br>
 现在我们应该可以理解背后的原理了吧</p>
