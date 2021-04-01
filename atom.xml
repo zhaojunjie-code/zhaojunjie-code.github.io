@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://zhaojunjie-code.github.io/</id>
+    <id>https://github.com/zhaojunjie-code/zhaojunjie-code.github.io</id>
     <title>杰</title>
-    <updated>2021-04-01T04:46:48.370Z</updated>
+    <updated>2021-04-01T04:51:27.391Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
-    <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
+    <link rel="alternate" href="https://github.com/zhaojunjie-code/zhaojunjie-code.github.io"/>
+    <link rel="self" href="https://github.com/zhaojunjie-code/zhaojunjie-code.github.io/atom.xml"/>
     <subtitle>前端探索</subtitle>
-    <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
-    <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
+    <logo>https://github.com/zhaojunjie-code/zhaojunjie-code.github.io/images/avatar.png</logo>
+    <icon>https://github.com/zhaojunjie-code/zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
     <entry>
         <title type="html"><![CDATA[第一次使用Gridea]]></title>
-        <id>https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/</id>
-        <link href="https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/">
+        <id>https://github.com/zhaojunjie-code/zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/</id>
+        <link href="https://github.com/zhaojunjie-code/zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/">
         </link>
         <updated>2021-03-31T16:05:56.000Z</updated>
         <content type="html"><![CDATA[<p>2021/4/1 0:08<br>
@@ -120,8 +120,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://zhaojunjie-code.github.io/post/hello-gridea/</id>
-        <link href="https://zhaojunjie-code.github.io/post/hello-gridea/">
+        <id>https://github.com/zhaojunjie-code/zhaojunjie-code.github.io/post/hello-gridea/</id>
+        <link href="https://github.com/zhaojunjie-code/zhaojunjie-code.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
