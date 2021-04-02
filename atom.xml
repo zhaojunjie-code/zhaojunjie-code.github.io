@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-02T08:01:14.784Z</updated>
+    <updated>2021-04-02T10:11:38.074Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,54 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[JS实现完美的拖拽]]></title>
+        <id>https://zhaojunjie-code.github.io/post/js-shi-xian-wan-mei-de-tuo-zhuai/</id>
+        <link href="https://zhaojunjie-code.github.io/post/js-shi-xian-wan-mei-de-tuo-zhuai/">
+        </link>
+        <updated>2021-04-02T08:19:32.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="预备知识">预备知识</h1>
+<p>##event事件对象</p>
+<h3 id="与光标有关的属性-clientx">与光标有关的属性 clientX</h3>
+<p>返回当事件被触发时，鼠标的水平坐标(距离 px)</p>
+<h3 id="与光标有关的属性-clienty">与光标有关的属性 clientY</h3>
+<p>返回当事件被触发时，鼠标的垂直坐标(距离 px)</p>
+<h2 id="html元素对象">HTML元素对象</h2>
+<h3 id="offsetleft">offsetLeft</h3>
+<p>当前元素相对与最近定位的父元素的水平距离(px)</p>
+<h3 id="offsettop">offsetTop</h3>
+<p>当前元素相对与最近定位的父元素的垂直距离(px)</p>
+<h1 id="跟随鼠标">跟随鼠标</h1>
+<p>每当提到控制DOM跟随鼠标移动，我们头脑里会蹦出PageX,PageY 它们俩分别返回当前光标的水平坐标和垂直坐标。</p>
+<pre><code class="language-javaScript">var left = event.pageX;
+var top = event.pageY;
+box1.style.left = left + &quot;px&quot;;
+box1.style.top = top +&quot;px&quot;;
+</code></pre>
+<p>这很容易实现</p>
+<h2 id="当我们将上述操作应用到拖拽操作时">当我们将上述操作应用到拖拽操作时</h2>
+<p>我们会发现，点击一个元素的某一位置进行拖拽时，元素总会跳变到跟随鼠标移动的位置<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1617353505592.png" alt="" loading="lazy"><br>
+这导致用户体验感极差<br>
+如何解决这个问题呢？<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1617354112330.png" alt="" loading="lazy"><br>
+我们可以看到</p>
+<h3 id="clientx-offsetleft-水平跳变距离">clientX - offsetLeft = 水平跳变距离</h3>
+<h3 id="同理-clienty-offsettop-垂直跳变距离">同理 clientY - offsetTop = 垂直跳变距离</h3>
+<pre><code class="language-javaScript">box1.onmousedown = function (event) {
+               var ol = event.clientX - box1.offsetLeft;
+               var ot = event.clientY - box1.offsetTop;
+               document.onmousemove = function (event) {
+                   var X = event.pageX - ol;
+                   var Y = event.pageY - ot;
+                   box1.style.left = X + &quot;px&quot;;
+                   box1.style.top = Y + &quot;px&quot;;
+               }
+           }
+</code></pre>
+<p>我们不希望看到跳变，那么就减去跳变距离</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JS实现先阅读协议，后注册]]></title>
         <id>https://zhaojunjie-code.github.io/post/js-shi-xian-xian-yue-du-xie-yi-hou-zhu-ce/</id>
