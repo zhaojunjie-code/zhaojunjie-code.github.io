@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-02T10:11:38.074Z</updated>
+    <updated>2021-04-06T16:39:26.492Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,202 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[AJAX]]></title>
+        <id>https://zhaojunjie-code.github.io/post/ajax/</id>
+        <link href="https://zhaojunjie-code.github.io/post/ajax/">
+        </link>
+        <updated>2021-04-06T13:33:01.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="第一天">第一天</h1>
+<h2 id="xmlhttprequest对象-ajax的开始">* XMLHttpRequest对象 AJAX的开始</h2>
+<pre><code class="language-javaScript">var xmlhttp;
+xmlhttp = new XMLHttpRequest();
+</code></pre>
+<h2 id="向服务器发送请求">向服务器发送请求</h2>
+<pre><code class="language-javaScript">xmlhttp.open(method,url,async);
+xmlhttp.send(string);
+</code></pre>
+<p>method: 请求的类型 &quot;GET&quot; OR &quot;POST&quot;<br>
+url: 文件在服务器的位置<br>
+async：true（异步）false（同步）</p>
+<p>string: 仅用于POST请求</p>
+<h3 id="当使用get发送信息时发送的信息写在url里面-send">当使用GET发送信息时，发送的信息写在url里面 send()</h3>
+<h3 id="当使用post发送信息时发送的信息写在send写在这里">当使用POST发送信息时，发送的信息写在send(写在这里)</h3>
+<h3 id="setrequsetheaderheadervalue">setRequsetHeader(header，value)</h3>
+<p>添加HTTP头<br>
+header: 规定头的名称<br>
+value： 规定头的值</p>
+<h2 id="服务器响应">服务器响应</h2>
+<h4 id="responsetext-获得字符串形式的响应数据">responseText 获得字符串形式的响应数据</h4>
+<h4 id="responsexml-获得xml形式的响应数据">responseXML 获得XML形式的响应数据</h4>
+<p>通常不是XML，就使用Text</p>
+<pre><code class="language-javaScript">document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;
+</code></pre>
+<p>如果是XML,则</p>
+<pre><code class="language-javaScript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;script&gt;
+function loadXMLDoc()
+{
+  var xmlhttp;
+  var txt,x,i;
+  if (window.XMLHttpRequest)
+  {
+    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+    xmlhttp=new XMLHttpRequest();
+  }
+  else
+  {
+    // IE6, IE5 浏览器执行代码
+    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+  }
+  xmlhttp.onreadystatechange=function()
+  {
+    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+    {
+      xmlDoc=xmlhttp.responseXML;
+      txt=&quot;&quot;;
+      x=xmlDoc.getElementsByTagName(&quot;ARTIST&quot;);
+      for (i=0;i&lt;x.length;i++)
+      {
+        txt=txt + x[i].childNodes[0].nodeValue + &quot;&lt;br&gt;&quot;;
+      }
+      document.getElementById(&quot;myDiv&quot;).innerHTML=txt;
+    }
+  }
+  xmlhttp.open(&quot;GET&quot;,&quot;cd_catalog.xml&quot;,true);
+  xmlhttp.send();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h2&gt;我收藏的 CD :&lt;/h2&gt;
+&lt;div id=&quot;myDiv&quot;&gt;&lt;/div&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;loadXMLDoc()&quot;&gt;获取我的 CD&lt;/button&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="onreadystatechange-事件-通常被绑定一个服务器响应函数">onreadystatechange 事件 通常被绑定一个服务器响应函数</h2>
+<p>当open,send这些请求发送到服务器是，，服务器会返回响应<br>
+onreadystatechange事件类似与onclick事件<br>
+每当鼠标点击会触发onclick事件</p>
+<h4 id="每当readystate改变时onreadystatechage会被触发一次">每当readyState改变时，onreadystatechage会被触发一次</h4>
+<h3 id="readystate-存有xmlhttprequest的状态0-4之间变化">readyState  存有XMLHttpRequest的状态，0-4之间变化</h3>
+<p>0：请求未初始化<br>
+1：服务器连接已建立<br>
+2：请求已接收<br>
+3：请求处理中<br>
+4：请求已完成，且响应已就绪</p>
+<h3 id="status-存储状态">status 存储状态</h3>
+<p>200：&quot;OK&quot;<br>
+404: 未找到页面<br>
+在onreadystatechange事件中，当readyState等于4且状态为200，表示响应就绪</p>
+<pre><code class="language-javaScript">if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)     //当服务器响应成功
+    {
+        document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;   //前端要干的事
+    }
+</code></pre>
+<h3 id="回调函数">回调函数</h3>
+<pre><code class="language-javaScript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+var xmlhttp;
+function loadXMLDoc(url,cfunc)
+{
+if (window.XMLHttpRequest)
+  {// IE7+, Firefox, Chrome, Opera, Safari 代码
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// IE6, IE5 代码
+  xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+  }
+xmlhttp.onreadystatechange=cfunc;
+xmlhttp.open(&quot;GET&quot;,url,true);
+xmlhttp.send();
+}
+function myFunction()
+{
+	loadXMLDoc(&quot;/try/ajax/ajax_info.txt&quot;,function()             //调用上面的函数
+	{
+		if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+		{
+			document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;
+		}
+	});
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;myDiv&quot;&gt;&lt;h2&gt;使用 AJAX 修改文本内容&lt;/h2&gt;&lt;/div&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;修改内容&lt;/button&gt;    //绑定自己调用的函数
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="与后台交互-documentgetelementbyidtxthintinnerhtmlxmlhttpresponsetext">与后台交互 document.getElementById(&quot;txtHint&quot;).innerHTML=xmlhttp.responseText;</h2>
+<pre><code class="language-javaScript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;script&gt;
+function showCustomer(str)
+{
+  var xmlhttp;    
+  if (str==&quot;&quot;)                 //开始状态，或者没有值
+  {
+    document.getElementById(&quot;txtHint&quot;).innerHTML=&quot;&quot;;
+    return;               //直接结束
+  }
+  if (window.XMLHttpRequest)
+  {
+    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+    xmlhttp=new XMLHttpRequest();            //创建一个XMLHttpRequest对象
+  }
+  else
+  {
+    // IE6, IE5 浏览器执行代码
+    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+  }
+  xmlhttp.open(&quot;GET&quot;,&quot;/try/ajax/getcustomer.php?q=&quot;+str,true);   //通过GET方法向服务器请求（发送的信息就在url后面加上）这里是 &quot;...q=&quot; +str
+  xmlhttp.send();
+  xmlhttp.onreadystatechange=function()     //绑定服务器响应函数  ，根据readyState的变化，调用onreadystatechange
+  {
+    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)    //响应成功的标志
+    {
+      document.getElementById(&quot;txtHint&quot;).innerHTML=xmlhttp.responseText;    //从服务器得到数据
+    }
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form action=&quot;&quot;&gt; 
+&lt;select name=&quot;customers&quot; onchange=&quot;showCustomer(this.value)&quot; style=&quot;font-family:Verdana, Arial, Helvetica, sans-serif;&quot;&gt;   //下拉列表
+&lt;option value=&quot;APPLE&quot;&gt;Apple Computer, Inc.&lt;/option&gt;
+&lt;option value=&quot;BAIDU &quot;&gt;BAIDU, Inc&lt;/option&gt;
+&lt;option value=&quot;Canon&quot;&gt;Canon USA, Inc.&lt;/option&gt;
+&lt;option value=&quot;Google&quot;&gt;Google, Inc.&lt;/option&gt;
+&lt;option value=&quot;Nokia&quot;&gt;Nokia Corporation&lt;/option&gt;
+&lt;option value=&quot;SONY&quot;&gt;Sony Corporation of America&lt;/option&gt;
+&lt;/select&gt;
+&lt;/form&gt;
+&lt;br&gt;
+&lt;div id=&quot;txtHint&quot;&gt;客户信息将显示在这...&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JS实现完美的拖拽]]></title>
         <id>https://zhaojunjie-code.github.io/post/js-shi-xian-wan-mei-de-tuo-zhuai/</id>
