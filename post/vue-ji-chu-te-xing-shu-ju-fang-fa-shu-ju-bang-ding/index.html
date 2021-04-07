@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 杰</title>
+<title>Vue基础特性-数据、方法、数据绑定 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,15 @@
 
 
 
-    <meta name="description" content="前端探索">
+    <meta name="description" content="数据
+var data = { a: 1 }
+var vm = new Vue({
+ data: data
+})
+vm.$data === data // -&gt; true
+vm.a === data.a // -&gt; true
+/..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,10 +96,70 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">Vue基础特性-数据、方法、数据绑定</h2>
+            <div class="post-date">2021-04-07</div>
             
+            <div class="post-content" v-pre>
+              <h1 id="数据">数据</h1>
+<pre><code class="language-javascript">var data = { a: 1 }
+var vm = new Vue({
+ data: data
+})
+vm.$data === data // -&gt; true
+vm.a === data.a // -&gt; true
+// 设置属性也会影响到原始数据
+vm.a = 2
+data.a // -&gt; 2
+// 反之亦然
+data.a = 3
+vm.a // -&gt; 3
+</code></pre>
+<p>如上，当在模板中使用{{a}},也会得到vm.a，修改vm.a，模板中的{{a}},也会改变，这称为</p>
+<h3 id="响应式数据">响应式数据</h3>
+<p>只有在初始化后的数据，才是响应式的，初始化后，再加入vm.b，这样不会有响应</p>
+<h1 id="方法">方法</h1>
+<h2 id="通过选型属性methods定义方法并通过v-on指令监听dom事件">通过选型属性methods:{},定义方法，并通过v-on指令监听DOM事件</h2>
+<pre><code class="language-javascript">&lt;button v-on:click=&quot;alert&quot;/&gt;alert&lt;button&gt;
+new Vue({
+el : '#app',
+data : { a : 1},
+methods : {
+　　 alert : function() {
+　　　 alert(this.a);
+　　 }
+}
+});
+</code></pre>
+<h1 id="数据绑定">数据绑定</h1>
+<p>1.文本插值<br>
+{{文本插值}}<br>
+2.HTML属性</p>
+<pre><code class="language-javascript">&lt;div id=&quot;id-{{id}}&quot;&gt;&lt;/div&gt; // &lt;div id=&quot;id-1&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>3.绑定表达式</p>
+<pre><code class="language-javascript">{{ index + 1 }} // 1
+{{ index == 0 ? 'a' : 'b'}} // a
+{{ name.split('').join('|') }} // V|u|e
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/vue-ji-chu-te-xing-mo-ban/">
+                  <h3 class="post-title">
+                    Vue基础特性-模板
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
       </div>
     </div>

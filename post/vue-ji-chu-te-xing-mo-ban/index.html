@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 杰</title>
+<title>Vue基础特性-模板 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,11 @@
 
 
 
-    <meta name="description" content="前端探索">
+    <meta name="description" content="Vue.js的使用都是通过构造函数Vue({option})，创建一个Vue实例：
+var vm = new Vue({
+    el:                           //挂载html元素，准备操作它
+    temp..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,10 +92,57 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">Vue基础特性-模板</h2>
+            <div class="post-date">2021-04-07</div>
             
+            <div class="post-content" v-pre>
+              <p>Vue.js的使用都是通过构造函数Vue({option})，创建一个Vue实例：</p>
+<pre><code class="language-javascript">var vm = new Vue({
+    el:                           //挂载html元素，准备操作它
+    template:
+})
+</code></pre>
+<h2 id="el-用来为实例提供挂载元素">el 用来为实例提供挂载元素</h2>
+<pre><code>el:'#app'
+</code></pre>
+<h2 id="默认将template值它的值一般都是html语句替换挂载元素即el对应的元素">默认将template值，(它的值一般都是html语句)替换挂载元素，即(el)对应的元素</h2>
+<h3 id="class合并挂载元素和模板根节点的属性-id则以模板根节点为属性">(class)合并挂载元素和模板根节点的属性, (id)则以模板根节点为属性</h3>
+<p>因为要在为template赋html语句。这样影响可读性<br>
+一般</p>
+<pre><code class="language-javascript">&lt;div id=&quot;app&quot;&gt;
+&lt;p&gt;123&lt;/p&gt;
+&lt;/div&gt;
+&lt;script id=&quot;tpl&quot; type=&quot;x-template&quot;&gt;           //script1
+&lt;div&gt;
+　　 &lt;p&gt;This is a tpl from script tag&lt;/p&gt;
+&lt;/div&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;                  //script2
+var vm = new Vue({
+　　 el : '#app',
+　　 template : '#tpl'                    //取自于script1
+});
+&lt;/script&gt;
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/vue-zu-jian/">
+                  <h3 class="post-title">
+                    Vue组件
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
       </div>
     </div>
