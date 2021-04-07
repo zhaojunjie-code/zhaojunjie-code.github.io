@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>JS实现完美的拖拽 | 杰</title>
+<title>Vue组件 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,12 @@
 
 
 
-    <meta name="description" content="预备知识
-##event事件对象
-与光标有关的属性 clientX
-返回当事件被触发时，鼠标的水平坐标(距离 px)
-与光标有关的属性 clientY
-返回当事件被触发时，鼠标的垂直坐标(距离 px)
-HTML元素对象
-offsetLeft..." />
+    <meta name="description" content="组件是一个拥有预定义选项的一个Vue实例
+定义语句
+Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)
+&lt;html&gt;
+&lt;body&gt;
+    &lt;div id=&quot;ap..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -97,59 +95,46 @@ offsetLeft..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">JS实现完美的拖拽</h2>
-            <div class="post-date">2021-04-02</div>
+            <h2 class="post-title">Vue组件</h2>
+            <div class="post-date">2021-04-07</div>
             
             <div class="post-content" v-pre>
-              <h1 id="预备知识">预备知识</h1>
-<p>##event事件对象</p>
-<h3 id="与光标有关的属性-clientx">与光标有关的属性 clientX</h3>
-<p>返回当事件被触发时，鼠标的水平坐标(距离 px)</p>
-<h3 id="与光标有关的属性-clienty">与光标有关的属性 clientY</h3>
-<p>返回当事件被触发时，鼠标的垂直坐标(距离 px)</p>
-<h2 id="html元素对象">HTML元素对象</h2>
-<h3 id="offsetleft">offsetLeft</h3>
-<p>当前元素相对与最近定位的父元素的水平距离(px)</p>
-<h3 id="offsettop">offsetTop</h3>
-<p>当前元素相对与最近定位的父元素的垂直距离(px)</p>
-<h1 id="跟随鼠标">跟随鼠标</h1>
-<p>每当提到控制DOM跟随鼠标移动，我们头脑里会蹦出PageX,PageY 它们俩分别返回当前光标的水平坐标和垂直坐标。</p>
-<pre><code class="language-javaScript">var left = event.pageX;
-var top = event.pageY;
-box1.style.left = left + &quot;px&quot;;
-box1.style.top = top +&quot;px&quot;;
+              <h1 id="组件是一个拥有预定义选项的一个vue实例">组件是一个拥有预定义选项的一个Vue实例</h1>
+<p>定义语句<br>
+Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)</p>
+<pre><code class="language-javaScript">&lt;html&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app9&quot;&gt;
+        &lt;button-counter&gt;&lt;/button-counter&gt;          &lt;!--组件标签--&gt;
+    &lt;/div&gt;
+&lt;\body&gt;
+&lt;\html&gt;
+&lt;script&gt;
+        Vue.component('button-counter', {             //Vue组件
+            data: function () {   //on:click响应函数
+                return {
+                    count: 0     //初始化默认
+                }
+            },
+            template: &quot;&lt;button v-on:click='count++'&gt;你点击了{{count}}次&lt;/button&gt;&quot;    //模板,使组件标签拥有模板的作用，我们看到模板是一个button标签，里面自带Vue的v-on绑定函数，让count++，函数在上面的DATA域
+        })
+        var app9 = new Vue({              //创建Vue对象
+            el: &quot;#app9&quot;,                          //元素截获
+            data: {                                     //数据对象
+
+            }
+        });
+&lt;\script&gt;       
 </code></pre>
-<p>这很容易实现</p>
-<h2 id="当我们将上述操作应用到拖拽操作时">当我们将上述操作应用到拖拽操作时</h2>
-<p>我们会发现，点击一个元素的某一位置进行拖拽时，元素总会跳变到跟随鼠标移动的位置<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1617353505592.png" alt="" loading="lazy"><br>
-这导致用户体验感极差<br>
-如何解决这个问题呢？<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1617354112330.png" alt="" loading="lazy"><br>
-我们可以看到</p>
-<h3 id="clientx-offsetleft-水平跳变距离">clientX - offsetLeft = 水平跳变距离</h3>
-<h3 id="同理-clienty-offsettop-垂直跳变距离">同理 clientY - offsetTop = 垂直跳变距离</h3>
-<pre><code class="language-javaScript">box1.onmousedown = function (event) {
-               var ol = event.clientX - box1.offsetLeft;
-               var ot = event.clientY - box1.offsetTop;
-               document.onmousemove = function (event) {
-                   var X = event.pageX - ol;
-                   var Y = event.pageY - ot;
-                   box1.style.left = X + &quot;px&quot;;
-                   box1.style.top = Y + &quot;px&quot;;
-               }
-           }
-</code></pre>
-<p>我们不希望看到跳变，那么就减去跳变距离</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/js-shi-xian-xian-yue-du-xie-yi-hou-zhu-ce/">
+                <a href="https://zhaojunjie-code.github.io/post/ajax/">
                   <h3 class="post-title">
-                    JS实现先阅读协议，后注册
+                    AJAX
                   </h3>
                 </a>
               </div>
