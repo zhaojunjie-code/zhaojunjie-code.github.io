@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-07T13:52:20.397Z</updated>
+    <updated>2021-04-16T00:42:29.828Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,267 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[Web前端方向]]></title>
+        <id>https://zhaojunjie-code.github.io/post/web-qian-duan-fang-xiang/</id>
+        <link href="https://zhaojunjie-code.github.io/post/web-qian-duan-fang-xiang/">
+        </link>
+        <updated>2021-04-16T00:41:35.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="就业">就业</h1>
+<h2 id="一-春招时间3-4月">一、春招时间：3-4月</h2>
+<h2 id="二-学习内容">二、学习内容</h2>
+<ul>
+<li>html/css</li>
+<li><strong>JavaScript（ES5、ES6）</strong></li>
+<li>框架（React或者Vue）</li>
+<li>浏览器工作原理与实践</li>
+<li>计算机网络（重点是HTTP、TCP）</li>
+<li>数据结构与算法</li>
+</ul>
+<h2 id="三-简历准备">三、简历准备</h2>
+<ul>
+<li>博客
+<ul>
+<li>Typora</li>
+<li>Markdown</li>
+<li>Gridea</li>
+</ul>
+</li>
+<li>项目
+<ul>
+<li>实训项目
+<ul>
+<li>node.js
+<ul>
+<li>链接：https://pan.baidu.com/s/1BHMKAQ_7sS8BnlOrcl8BUg<br>
+提取码：ywva<br>
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>比赛项目</li>
+</ul>
+</li>
+</ul>
+<h2 id="四-学习资料">四、学习资料</h2>
+<ul>
+<li>JavaScript
+<ul>
+<li>JavaScript高级程序设计（ES5）
+<ul>
+<li>音频教程：https://www.ximalaya.com/gerenchengzhang/3740790/</li>
+</ul>
+</li>
+<li>ECMAScript 6入门
+<ul>
+<li>https://es6.ruanyifeng.com/#README</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>计算机网络
+<ul>
+<li>图解TCP/IP</li>
+<li>图解HTTP</li>
+<li>计算机网络自顶向下</li>
+<li><strong>透视HTTP</strong>
+<ul>
+<li>链接：https://pan.baidu.com/s/1SI8bD0t9VI29qJgZdrcAug<br>
+提取码：pe41<br>
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>浏览器工作原理与实践
+<ul>
+<li>链接：https://pan.baidu.com/s/1gO05ERziH9r3aYoKuZA9sw<br>
+提取码：8wqy<br>
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享</li>
+</ul>
+</li>
+<li>数据结构与算法
+<ul>
+<li>Leetcode</li>
+<li>牛客（剑指offer）</li>
+</ul>
+</li>
+<li>搜索
+<ul>
+<li>掘金</li>
+<li>思否</li>
+<li>知乎</li>
+<li>MDN</li>
+</ul>
+</li>
+<li>面试
+<ul>
+<li>牛客</li>
+<li>实习僧</li>
+<li>拉钩</li>
+<li>Boss直聘</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS基础总结]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-zong-jie/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-zong-jie/">
+        </link>
+        <updated>2021-04-12T06:06:14.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="background">background</h1>
+<h2 id="background-image-背景图">background-image 背景图</h2>
+<p>默认情况下background-image属性在水平和垂直方向上都重复的图像</p>
+<h2 id="background-repeat-设置重复方向">background-repeat  设置重复方向</h2>
+<p>repeatx:水平方向重复<br>
+repeaty:垂直方向上重复<br>
+no-repeat:不重复</p>
+<h2 id="background-position-设置图片位置">background-position  设置图片位置</h2>
+<p>right top :右上角</p>
+<h2 id="background-attachment-设置图片附着">background-attachment 设置图片附着</h2>
+<p>fixed:一直附着在网页上，随着鼠标滚动 client右上角<br>
+scroll:不随鼠标滚动，定死在右上角<br>
+简写</p>
+<pre><code class="language-css">body {
+background: #ffffff url(&quot;tree.png&quot;) no-repeat right top;  //注意顺序 颜色，背景图，重复，位置
+}
+</code></pre>
+<h1 id="border">border</h1>
+<h2 id="border-style-设置边框的类型">border-style 设置边框的类型</h2>
+<p>dotted - 定义点线边框<br>
+*dashed - 定义虚线边框<br>
+*solid - 定义实线边框<br>
+double - 定义双边框<br>
+groove - 定义 3D 坡口边框。效果取决于 border-color 值<br>
+ridge - 定义 3D 脊线边框。效果取决于 border-color 值<br>
+inset - 定义 3D inset 边框。效果取决于 border-color 值<br>
+outset - 定义 3D outset 边框。效果取决于 border-color 值<br>
+none - 定义无边框<br>
+hidden - 定义隐藏边框</p>
+<h2 id="border-width-边框宽度">border-width 边框宽度</h2>
+<p>medium,thick,<br>
+还可设置四个值(上右下左)，可以设置个边的长度</p>
+<h2 id="border-color-边框颜色">border-color 边框颜色</h2>
+<p>同上</p>
+<h2 id="border-radius-添加圆角">border-radius 添加圆角</h2>
+<p>radius越大，左右边框越圆</p>
+<h1 id="margin-外边距">margin 外边距</h1>
+<h2 id="toprightbottomleft">top;right,bottom,left</h2>
+<p>auto - 浏览器来计算外边距<br>
+length - 以 px、pt、cm 等单位指定外边距<br>
+% - 指定以包含元素宽度的百分比计的外边距<br>
+inherit - 指定应从父元素继承外边距</p>
+<h2 id="margin简写">margin简写</h2>
+<p>四个值：上，右，下，左<br>
+三个值：上，右左，下<br>
+两个值：上下，左右<br>
+一个值：上右下左<br>
+auto:元素在其容器中水平居中，该元素占据指定宽度，并且甚于空间将在左右边界之间平均分配<br>
+inherit:</p>
+<pre><code class="language-css">div {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+p.ex1 {
+  margin-left: inherit;      //class=ex1的元素，继承父元素div的外边距，也为margin-left: 100px;
+}
+</code></pre>
+<h2 id="外边距合并">外边距合并</h2>
+<h3 id="垂直外边距当两个垂直外边距相遇他们会合并成一个外边距">垂直外边距：当两个垂直外边距相遇，他们会合并成一个外边距</h3>
+<p><img src="https://zhaojunjie-code.github.io//post-images/1618209661668.PNG" alt="" loading="lazy"><br>
+解释一下：程序员的疏忽，给上面一个盒子设置了下边距，又给下面一个盒子设置了上边距；边距相包含，则浏览器会找出两个边距较大的作为包含后的边距</p>
+<h3 id="嵌套外边距合并当两个盒子嵌套在一起父元素没有设置上内边距及边框则父元素的上外边距会与子元素的上外边距合并取较大者">嵌套外边距合并：当两个盒子嵌套在一起，父元素没有设置上内边距及边框，则父元素的上外边距会与子元素的上外边距合并，取较大者</h3>
+<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618210496706.PNG" alt="" loading="lazy"></figure>
+<h3 id="甚至有空元素设置了上外边距和下外边距上下会合并取较大者">甚至有空元素，设置了上外边距和下外边距，上下会合并，取较大者</h3>
+<h3 id="解决方案">解决方案：</h3>
+<p>父元素加上 overflow:hidden的解除坍塌功能;<br>
+父元素加上边框 border:1px solid transparent设边框加透明，不推荐；<br>
+父元素或子元素 浮动或者定位</p>
+<h1 id="padding-内边距">padding 内边距</h1>
+<p>top,right,bottom,left<br>
+length - 以 px、pt、cm 等单位指定内边距<br>
+% - 指定以包含元素宽度的百分比计的内边距<br>
+inherit - 指定应从父元素继承内边距<br>
+基本操作根外边距一样：四个值，三个值，两个值，一个值</p>
+<h2 id="padding可以撑大定义的width">padding可以撑大定义的width</h2>
+<p>解决方案：box-sizing:border-box；width固定，不允许撑大width</p>
+<h1 id="widthheight宽度高度不包括内边距外边距和边框">width,height宽度，高度：不包括内边距，外边距，和边框。</h1>
+<p>auto - 默认。浏览器计算高度和宽度。<br>
+length - 以 px、cm 等定义高度/宽度。<br>
+% - 以包含块的百分比定义高度/宽度。<br>
+initial - 将高度/宽度设置为默认值。<br>
+inherit - 从其父值继承高度/宽度。</p>
+<h2 id="max-width-设置最大宽度">max-width 设置最大宽度</h2>
+<p>他的用处是：动态的宽度，随着浏览器窗口大小分配到宽度，但最大不呢个超过max-width</p>
+<h1 id="框模型">框模型</h1>
+<figure data-type="image" tabindex="2"><img src="https://zhaojunjie-code.github.io//post-images/1618212892530.PNG" alt="" loading="lazy"></figure>
+<h1 id="轮廓outline边框之外加一些渲染">轮廓outline：边框之外加一些渲染</h1>
+<p>outline-style<br>
+outline-color<br>
+outline-width 轮廓宽度<br>
+outline-offset 轮廓与边框的距离<br>
+outline</p>
+<pre><code class="language-css"> outline: 1px solid red;
+</code></pre>
+<h1 id="文本">文本</h1>
+<h2 id="color-background-color">color background-color</h2>
+<p>字体颜色和背景颜色</p>
+<h2 id="text-align-文本对齐">text-align 文本对齐</h2>
+<p>center:居中<br>
+left:左<br>
+right:右<br>
+justify:使一段文章的每一行宽度都相等，浏览器会自动的为，不能成为一行的添加空格，凑成一行下图，注意到浏览器自动添加空格，使每一行宽度都一样<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1618225316912.PNG" alt="" loading="lazy"></p>
+<h2 id="direction文本方向">direction文本方向</h2>
+<p>ltr:left to right    默认方向：从左向右  左对齐<br>
+rtl:right to left  自定义方向：从左向右 右对齐<br>
+inherit：继承父元素的方向</p>
+<h2 id="unicode-bidi-用于同一个页面里存在从不同方向读进的文本显示与direction同时使用确定文本方向">unicode-bidi: 用于同一个页面里存在从不同方向读进的文本显示,与direction同时使用，确定文本方向</h2>
+<p>有以下的取值<br>
+normal:同原来的方向一样<br>
+bidi-override:按照direction的值，排序如果是左对齐，就正着来，右对齐就从反着写。<br>
+embed:作用于行内元素，按照direction的值决定插入在哪里，正着写</p>
+<h2 id="vertical-align-垂直对齐">vertical-align 垂直对齐</h2>
+<p>top: 文本顶部对齐<br>
+middle:文本中间对齐<br>
+bottom:文本底部对齐<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1618227261063.PNG" alt="" loading="lazy"><br>
+#text-decoration 文本装饰<br>
+none:用于从链接上删除下划线<br>
+line-through:删除线</p>
+<h2 id="text-transform文本转换">text-transform文本转换</h2>
+<p>uppercase:大写<br>
+lowercase:小写<br>
+capitalize:开头字母大写</p>
+<h1 id="文字间距">文字间距</h1>
+<h2 id="text-indent文字缩进">text-indent文字缩进</h2>
+<p>第一行的缩进，写文章时空两个</p>
+<h2 id="letter-spacing-字母间距">letter-spacing 字母间距</h2>
+<p>指定文本中字符之间的间距<br>
+3px:字母与字母之间有3像素的距离<br>
+-3px:字母于字母之间缩进3像素的距离</p>
+<h2 id="white-space-空白">white-space 空白</h2>
+<p>nowrap:禁用元素内文本的换行<br>
+#text-shadow 文本阴影<br>
+水平阴影，垂直阴影 单位px<br>
+#font-size 字体大小<br>
+注意的一点就是：1px = 16em<br>
+font简写<br>
+注意<br>
+size和family是必要的，还有style斜体italic；width粗细700</p>
+<h1 id="a链接">a链接</h1>
+<p>a.link:未访问的链接<br>
+a.visited：访问过的链接<br>
+a.hover:鼠标放上去时<br>
+a.active:链接被点击时</p>
+<h1 id="列表">列表</h1>
+<p>注意一点<br>
+list-style:none;之后，列表依然有边距，可以用margin:0;padding:0;删除边距</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Vue基础特性-数据、方法、数据绑定]]></title>
         <id>https://zhaojunjie-code.github.io/post/vue-ji-chu-te-xing-shu-ju-fang-fa-shu-ju-bang-ding/</id>
@@ -34,7 +295,7 @@ vm.a // -&gt; 3
 <h3 id="响应式数据">响应式数据</h3>
 <p>只有在初始化后的数据，才是响应式的，初始化后，再加入vm.b，这样不会有响应</p>
 <h1 id="方法">方法</h1>
-<h2 id="通过选型属性methods定义方法并通过v-on指令监听dom事件">通过选型属性methods:{},定义方法，并通过v-on指令监听DOM事件</h2>
+<h2 id="通过选择属性methods定义方法并通过v-on指令监听dom事件">通过选择属性methods:{},定义方法，并通过v-on指令监听DOM事件</h2>
 <pre><code class="language-javascript">&lt;button v-on:click=&quot;alert&quot;/&gt;alert&lt;button&gt;
 new Vue({
 el : '#app',
