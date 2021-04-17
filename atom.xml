@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-16T00:43:14.742Z</updated>
+    <updated>2021-04-17T10:22:23.322Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[CSS定位机制]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-ding-wei-ji-zhi/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-ding-wei-ji-zhi/">
+        </link>
+        <updated>2021-04-17T09:16:31.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="css有三种定位机制-普通流浮动绝对定位">CSS有三种定位机制 普通流，浮动，绝对定位</h1>
+<h2 id="普通流由html位置决定块级框一个接一个排列框之间的垂直距离是由框的垂直外边计算出来的行内框在一行中水平布置水平内边距-边框和外边距调整它们的间距垂直边距边框距不会改变其高度">普通流:由HTML位置决定，块级框一个接一个排列，框之间的垂直距离是由框的垂直外边计算出来的；行内框在一行中水平布置，水平内边距、边框和外边距调整它们的间距，垂直边距，边框距不会改变其高度。</h2>
+<h2 id="定位-相对定位-relative">定位-相对定位 relative</h2>
+<h3 id="positonrelative其元素并不会脱离文档流而是还出现在相对定位之前的位置但是可以通过topleftrightbottom设置其偏移距离注意它一直在文档流中仍然占据原来的空间-移动后会覆盖其他的框">positon:relative;其元素并不会脱离文档流，而是还出现在相对定位之前的位置，但是可以通过top,left,right,bottom设置其偏移距离，注意：它一直在文档流中，仍然占据原来的空间。移动后会覆盖其他的框</h3>
+<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618652538672.PNG" alt="" loading="lazy"></figure>
+<h3 id="positonabsolute其元素会从文档流中删除并相对于一个已经定位的包含块定位如果没有包含块则相对于初始块定位元素原先在文档流中占据的空间会被浏览器关闭他之后的元素可能会上来补他的位置-元素定位后生成一个块级框而不论原来它在正常流中生成何种类型的框">positon:absolute;其元素会从文档流中删除，并相对于一个已经定位的包含块定位(如果没有包含块，则相对于初始块定位)，元素原先在文档流中占据的空间会被浏览器关闭，他之后的元素可能会上来补他的位置。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</h3>
+<figure data-type="image" tabindex="2"><img src="https://zhaojunjie-code.github.io//post-images/1618652786818.PNG" alt="" loading="lazy"></figure>
+<h2 id="浮动float">浮动float</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Web前端方向]]></title>
         <id>https://zhaojunjie-code.github.io/post/web-qian-duan-fang-xiang/</id>
@@ -113,6 +129,55 @@
 </ul>
 </li>
 </ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS中级总结]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-zhong-ji-zong-jie/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-zhong-ji-zong-jie/">
+        </link>
+        <updated>2021-04-12T12:39:49.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="display属性">display属性</h1>
+<p>如何显示一个元素：block，inline<br>
+首先要了解块级元素：占据一行的宽度<br>
+div,h1-h6,p,form,header,footer,section</p>
+<p>行内元素：占据所需的宽度<br>
+span,a,img</p>
+<h2 id="覆盖默认的display值">覆盖默认的display值</h2>
+<p>li{display:inline;}  li本来是块级元素，强制将其转变为行内元素<br>
+span{display:block;}span本来是行内元素，强制将其转变为块级元素<br>
+注意这种强制转换为行内元素的标签，是不能为其设置高度的</p>
+<h2 id="displaynone-通常与js用来隐藏显示元素-该元素的位置会被其他元素占据">display:none 通常与JS用来隐藏显示元素 该元素的位置会被其他元素占据</h2>
+<pre><code class="language-javascript">document.getelementById(&quot;btn01).onclick = function(){  //为按钮绑定单击响应函数
+      document.getelementById(&quot;box01).style.display = &quot;none&quot;;
+}
+</code></pre>
+<h2 id="visibilityhidden指定元素是否可见元素所占据的位置还是存在">visibility：hidden指定元素是否可见，元素所占据的位置还是存在</h2>
+<h1 id="position定位">position定位</h1>
+<h2 id="static浏览器为其自动安排位置">static:浏览器为其自动安排位置</h2>
+<h2 id="relative元素相对于其正常位置进行定位这时要用上lefttopbottom">relative:元素相对于其正常位置进行定位；这时要用上left:;top:;bottom:;</h2>
+<h2 id="fixed相对于屏幕定位鼠标滚动页面它始终处于同一位置">fixed:相对于屏幕定位，鼠标滚动页面，它始终处于同一位置</h2>
+<h2 id="absolute相对于最近的定位了的祖先元素进行定位-如果没有祖先则使用文档主体并随页面滚动">absolute：相对于最近的定位了的祖先元素进行定位。如果没有祖先，则使用文档主体，并随页面滚动。</h2>
+<p>&quot;定位了的祖先&quot;:除了static属性以外的其他属性fixed,relative...都可以被定义为&quot;定位了的祖先&quot;</p>
+<h2 id="fixed粘性定位-粘性定位开始并不是粘性定位而是relative直到至少给定一个topleft来指明什么时侯开始成为粘性定位">fixed:粘性定位。粘性定位开始并不是粘性定位，而是relative；直到至少给定一个top,left,...来指明什么时侯开始成为粘性定位。</h2>
+<h2 id="z-index重叠定位">z-index重叠定位</h2>
+<p>用来确定重叠的元素，呈现给用户的顺序。<br>
+z-index=-1 堆叠顺序较低，所以成为了背景板<br>
+z-index越高，则越是主角</p>
+<h1 id="overflow-溢出指在内容太大而无法放在指定区域用来决定是裁剪还是添加滚动条">overflow 溢出：指在内容太大而无法放在指定区域，用来决定是裁剪还是添加滚动条</h1>
+<h2 id="visible默认溢出就溢出在外面接着渲染">visible:默认，溢出就溢出，在外面接着渲染</h2>
+<h2 id="hidden裁剪溢出部分不要了">hidden:裁剪，溢出部分不要了</h2>
+<h2 id="scroll加滚动条">scroll:加滚动条</h2>
+<h1 id="float浮动">float浮动</h1>
+<h2 id="inherit继承父级float值">inherit继承父级float值</h2>
+<h1 id="clear清除">clear清除</h1>
+<p>##none：允许两侧都有浮动元素   会出现不浮动元素嵌入到浮动元素下面</p>
+<h2 id="left左侧不允许浮动元素左侧被管制-如果">left：左侧不允许浮动元素，左侧被管制   如果</h2>
+<h2 id="right同上">right：同上</h2>
+<h2 id="both左侧或右侧不允许浮动元素">both：左侧或右侧不允许浮动元素</h2>
+<h2 id="inherit继承父级的clear">inherit：继承父级的clear</h2>
+<h2 id="清除原理-一个div1左浮动另一个div2不浮动则会出现给用户这样的情况div2出现在div1的下面当div2使用clearleft时浏览器检查div2发现其左侧有div1在浮动他会清除这种效果本来div1是左漂浮起来了div2在其下面浏览器将div1的投影也占位div2自然而然就跑到了div1的一下一行注意float与clear是对应的div1-floatleft-那么div2-clearleft这样才会起作用">清除原理： 一个div1左浮动，另一个div2不浮动；则会出现给用户这样的情况，div2出现在div1的下面，当div2使用clear:left;时，浏览器检查div2，发现其左侧有div1在浮动，他会清除这种效果(本来div1是左漂浮起来了，div2在其下面，浏览器将div1的投影也占位，div2自然而然就跑到了div1的一下一行)注意float与clear是对应的div1 float:left 那么div2 clear:left这样才会起作用</h2>
+<h1 id="box-sizingborder-box-强制限制内边距和边框的厚度不能撑开盒子除非内边距和边框厚度设置的太离谱为了保证内容盒子会被放大">box-sizing:border-box; 强制限制内边距和边框的厚度不能撑开盒子(除非内边距和边框厚度设置的太离谱，为了保证内容，盒子会被放大)</h1>
 ]]></content>
     </entry>
     <entry>
@@ -666,114 +731,6 @@ box1.style.top = top +&quot;px&quot;;
  					inputs[0].disabled = false;
  					inputs[1].disabled = false;
  				}</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[第一次使用Gridea]]></title>
-        <id>https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/</id>
-        <link href="https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/">
-        </link>
-        <updated>2021-03-31T16:05:56.000Z</updated>
-        <content type="html"><![CDATA[<p>2021/4/1 0:08<br>
-终于写下了第一篇博客，为前端的学习做好了准备<br>
-<em>斜体字</em><br>
-<strong>粗体字</strong><br>
-<em><strong>粗斜体文本</strong></em><br>
-<em>插入斜线</em></p>
-<hr>
-<p><s>删除文字</s><br>
-<u>带上下划线</u><br>
-<em>添加脚注</em><br>
-长沙理工大学<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<p>有序列表与无序列表，一定要有一个空格</p>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ul>
-<ul>
-<li>第三项</li>
-<li>第四项</li>
-<li>第五项</li>
-</ul>
-<ul>
-<li>第六项</li>
-<li>第七项</li>
-<li>第八项</li>
-</ul>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-<li>第四项，嵌套使用
-<ul>
-<li>新的一项，要留四个空格</li>
-<li>新的一项，要留四个空格</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>区块</p>
-<blockquote>
-<p>第一次嵌套</p>
-<blockquote>
-<p>第二次嵌套</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>区块中使用列表</p>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-</ul>
-</blockquote>
-<p>列表中使用区块</p>
-<ol>
-<li>
-<p>第一项</p>
-<blockquote>
-<p>第一区块<br>
-第二区块<br>
-第三区块</p>
-</blockquote>
-</li>
-<li>
-<p>第二项</p>
-<blockquote>
-<p>第一区块<br>
-第二区块<br>
-第三区块</p>
-</blockquote>
-</li>
-</ol>
-<p>代码区块,三个漂符，可以指定语言也可不指定语言<br>
-<code>printf()</code> 函数</p>
-<pre><code class="language-javaScript">$(document).ready(function () {
-    alert('RUNOOB');
-});
-</code></pre>
-<p>基本的链接使用方法<br>
-这是一个<a href="https://www.runoob.com">菜鸟教程</a>的链接<br>
-高级使用方法<br>
-用1设置链接变量<br>
-这是一个链接 [菜鸟教程][1]<br>
-[1]:  https://www.runoob.com/<br>
-两种显示出图片的方法<br>
-<img src="http://static.runoob.com/images/runoob-logo.png" alt="这里填显示不出来的代替文字" loading="lazy"><br>
-<img src="http://static.runoob.com/images/runoob-logo.png" width="50%"></p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>双非大学 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 ]]></content>
     </entry>
 </feed>

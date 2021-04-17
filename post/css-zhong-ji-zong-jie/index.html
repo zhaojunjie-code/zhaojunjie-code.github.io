@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CSS中级总结 | 杰</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhaojunjie-code.github.io//favicon.ico?v=1618654937757">
+<link rel="stylesheet" href="https://zhaojunjie-code.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="display属性
+如何显示一个元素：block，inline
+首先要了解块级元素：占据一行的宽度
+div,h1-h6,p,form,header,footer,section
+行内元素：占据所需的宽度
+span,a,img
+覆盖默认的di..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhaojunjie-code.github.io/">
+        <img src="https://zhaojunjie-code.github.io//images/avatar.png?v=1618654937757" class="site-logo">
+        <h1 class="site-title">杰</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      前端探索
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhaojunjie-code.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CSS中级总结</h2>
+            <div class="post-date">2021-04-12</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="display属性">display属性</h1>
+<p>如何显示一个元素：block，inline<br>
+首先要了解块级元素：占据一行的宽度<br>
+div,h1-h6,p,form,header,footer,section</p>
+<p>行内元素：占据所需的宽度<br>
+span,a,img</p>
+<h2 id="覆盖默认的display值">覆盖默认的display值</h2>
+<p>li{display:inline;}  li本来是块级元素，强制将其转变为行内元素<br>
+span{display:block;}span本来是行内元素，强制将其转变为块级元素<br>
+注意这种强制转换为行内元素的标签，是不能为其设置高度的</p>
+<h2 id="displaynone-通常与js用来隐藏显示元素-该元素的位置会被其他元素占据">display:none 通常与JS用来隐藏显示元素 该元素的位置会被其他元素占据</h2>
+<pre><code class="language-javascript">document.getelementById(&quot;btn01).onclick = function(){  //为按钮绑定单击响应函数
+      document.getelementById(&quot;box01).style.display = &quot;none&quot;;
+}
+</code></pre>
+<h2 id="visibilityhidden指定元素是否可见元素所占据的位置还是存在">visibility：hidden指定元素是否可见，元素所占据的位置还是存在</h2>
+<h1 id="position定位">position定位</h1>
+<h2 id="static浏览器为其自动安排位置">static:浏览器为其自动安排位置</h2>
+<h2 id="relative元素相对于其正常位置进行定位这时要用上lefttopbottom">relative:元素相对于其正常位置进行定位；这时要用上left:;top:;bottom:;</h2>
+<h2 id="fixed相对于屏幕定位鼠标滚动页面它始终处于同一位置">fixed:相对于屏幕定位，鼠标滚动页面，它始终处于同一位置</h2>
+<h2 id="absolute相对于最近的定位了的祖先元素进行定位-如果没有祖先则使用文档主体并随页面滚动">absolute：相对于最近的定位了的祖先元素进行定位。如果没有祖先，则使用文档主体，并随页面滚动。</h2>
+<p>&quot;定位了的祖先&quot;:除了static属性以外的其他属性fixed,relative...都可以被定义为&quot;定位了的祖先&quot;</p>
+<h2 id="fixed粘性定位-粘性定位开始并不是粘性定位而是relative直到至少给定一个topleft来指明什么时侯开始成为粘性定位">fixed:粘性定位。粘性定位开始并不是粘性定位，而是relative；直到至少给定一个top,left,...来指明什么时侯开始成为粘性定位。</h2>
+<h2 id="z-index重叠定位">z-index重叠定位</h2>
+<p>用来确定重叠的元素，呈现给用户的顺序。<br>
+z-index=-1 堆叠顺序较低，所以成为了背景板<br>
+z-index越高，则越是主角</p>
+<h1 id="overflow-溢出指在内容太大而无法放在指定区域用来决定是裁剪还是添加滚动条">overflow 溢出：指在内容太大而无法放在指定区域，用来决定是裁剪还是添加滚动条</h1>
+<h2 id="visible默认溢出就溢出在外面接着渲染">visible:默认，溢出就溢出，在外面接着渲染</h2>
+<h2 id="hidden裁剪溢出部分不要了">hidden:裁剪，溢出部分不要了</h2>
+<h2 id="scroll加滚动条">scroll:加滚动条</h2>
+<h1 id="float浮动">float浮动</h1>
+<h2 id="inherit继承父级float值">inherit继承父级float值</h2>
+<h1 id="clear清除">clear清除</h1>
+<p>##none：允许两侧都有浮动元素   会出现不浮动元素嵌入到浮动元素下面</p>
+<h2 id="left左侧不允许浮动元素左侧被管制-如果">left：左侧不允许浮动元素，左侧被管制   如果</h2>
+<h2 id="right同上">right：同上</h2>
+<h2 id="both左侧或右侧不允许浮动元素">both：左侧或右侧不允许浮动元素</h2>
+<h2 id="inherit继承父级的clear">inherit：继承父级的clear</h2>
+<h2 id="清除原理-一个div1左浮动另一个div2不浮动则会出现给用户这样的情况div2出现在div1的下面当div2使用clearleft时浏览器检查div2发现其左侧有div1在浮动他会清除这种效果本来div1是左漂浮起来了div2在其下面浏览器将div1的投影也占位div2自然而然就跑到了div1的一下一行注意float与clear是对应的div1-floatleft-那么div2-clearleft这样才会起作用">清除原理： 一个div1左浮动，另一个div2不浮动；则会出现给用户这样的情况，div2出现在div1的下面，当div2使用clear:left;时，浏览器检查div2，发现其左侧有div1在浮动，他会清除这种效果(本来div1是左漂浮起来了，div2在其下面，浏览器将div1的投影也占位，div2自然而然就跑到了div1的一下一行)注意float与clear是对应的div1 float:left 那么div2 clear:left这样才会起作用</h2>
+<h1 id="box-sizingborder-box-强制限制内边距和边框的厚度不能撑开盒子除非内边距和边框厚度设置的太离谱为了保证内容盒子会被放大">box-sizing:border-box; 强制限制内边距和边框的厚度不能撑开盒子(除非内边距和边框厚度设置的太离谱，为了保证内容，盒子会被放大)</h1>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/css-zong-jie/">
+                  <h3 class="post-title">
+                    CSS基础总结
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

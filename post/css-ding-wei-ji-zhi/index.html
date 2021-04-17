@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Vue组件 | 杰</title>
+<title>CSS定位机制 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,12 +18,9 @@
 
 
 
-    <meta name="description" content="组件是一个拥有预定义选项的一个Vue实例
-定义语句
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)
-&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;ap..." />
+    <meta name="description" content="CSS有三种定位机制 普通流，浮动，绝对定位
+普通流:由HTML位置决定，块级框一个接一个排列，框之间的垂直距离是由框的垂直外边计算出来的；行内框在一行中水平布置，水平内边距、边框和外边距调整它们的间距，垂直边距，边框距不会改变其高度。
+定..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -95,46 +92,27 @@ Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Vue组件</h2>
-            <div class="post-date">2021-04-07</div>
+            <h2 class="post-title">CSS定位机制</h2>
+            <div class="post-date">2021-04-17</div>
             
             <div class="post-content" v-pre>
-              <h1 id="组件是一个拥有预定义选项的一个vue实例">组件是一个拥有预定义选项的一个Vue实例</h1>
-<p>定义语句<br>
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)</p>
-<pre><code class="language-javaScript">&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;app9&quot;&gt;
-        &lt;button-counter&gt;&lt;/button-counter&gt;          &lt;!--组件标签--&gt;
-    &lt;/div&gt;
-&lt;\body&gt;
-&lt;\html&gt;
-&lt;script&gt;
-        Vue.component('button-counter', {             //Vue组件
-            data: function () {   //on:click响应函数
-                return {
-                    count: 0     //初始化默认
-                }
-            },
-            template: &quot;&lt;button v-on:click='count++'&gt;你点击了{{count}}次&lt;/button&gt;&quot;    //模板,使组件标签拥有模板的作用，我们看到模板是一个button标签，里面自带Vue的v-on绑定函数，让count++，函数在上面的DATA域
-        })
-        var app9 = new Vue({              //创建Vue对象
-            el: &quot;#app9&quot;,                          //元素截获
-            data: {                                     //数据对象
-
-            }
-        });
-&lt;\script&gt;       
-</code></pre>
+              <h1 id="css有三种定位机制-普通流浮动绝对定位">CSS有三种定位机制 普通流，浮动，绝对定位</h1>
+<h2 id="普通流由html位置决定块级框一个接一个排列框之间的垂直距离是由框的垂直外边计算出来的行内框在一行中水平布置水平内边距-边框和外边距调整它们的间距垂直边距边框距不会改变其高度">普通流:由HTML位置决定，块级框一个接一个排列，框之间的垂直距离是由框的垂直外边计算出来的；行内框在一行中水平布置，水平内边距、边框和外边距调整它们的间距，垂直边距，边框距不会改变其高度。</h2>
+<h2 id="定位-相对定位-relative">定位-相对定位 relative</h2>
+<h3 id="positonrelative其元素并不会脱离文档流而是还出现在相对定位之前的位置但是可以通过topleftrightbottom设置其偏移距离注意它一直在文档流中仍然占据原来的空间-移动后会覆盖其他的框">positon:relative;其元素并不会脱离文档流，而是还出现在相对定位之前的位置，但是可以通过top,left,right,bottom设置其偏移距离，注意：它一直在文档流中，仍然占据原来的空间。移动后会覆盖其他的框</h3>
+<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618652538672.PNG" alt="" loading="lazy"></figure>
+<h3 id="positonabsolute其元素会从文档流中删除并相对于一个已经定位的包含块定位如果没有包含块则相对于初始块定位元素原先在文档流中占据的空间会被浏览器关闭他之后的元素可能会上来补他的位置-元素定位后生成一个块级框而不论原来它在正常流中生成何种类型的框">positon:absolute;其元素会从文档流中删除，并相对于一个已经定位的包含块定位(如果没有包含块，则相对于初始块定位)，元素原先在文档流中占据的空间会被浏览器关闭，他之后的元素可能会上来补他的位置。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</h3>
+<figure data-type="image" tabindex="2"><img src="https://zhaojunjie-code.github.io//post-images/1618652786818.PNG" alt="" loading="lazy"></figure>
+<h2 id="浮动float">浮动float</h2>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/ajax/">
+                <a href="https://zhaojunjie-code.github.io/post/web-qian-duan-fang-xiang/">
                   <h3 class="post-title">
-                    AJAX
+                    Web前端方向
                   </h3>
                 </a>
               </div>
