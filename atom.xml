@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-17T10:32:10.750Z</updated>
+    <updated>2021-04-17T10:32:35.987Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
     <entry>
-        <title type="html"><![CDATA[CSS选择器]]></title>
+        <title type="html"><![CDATA[CSS组合器]]></title>
         <id>https://zhaojunjie-code.github.io/post/css-xuan-ze-qi/</id>
         <link href="https://zhaojunjie-code.github.io/post/css-xuan-ze-qi/">
         </link>
