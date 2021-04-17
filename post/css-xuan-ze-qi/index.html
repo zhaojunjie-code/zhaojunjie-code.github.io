@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>JS实现先阅读协议，后注册 | 杰</title>
+<title>CSS选择器 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,8 +18,12 @@
 
 
 
-    <meta name="description" content="每当我们想注册账号，或者安装软件时，总有一些细致严谨的公司，他们让你在安装前阅读长长的协议。这背后的原理是什么呢？
-我们先应该了解JS里的 scrollHeight(文档内容实际高度，包括超出视窗的溢出部分)，scrollTop(滚动条相对..." />
+    <meta name="description" content="后代选择器: 空格
+很简单，例如div p {？} ：这说明div下的所有p后代都需要有？这个效果
+子选择器: &gt;
+div&gt;p{} 说明那些唯一爸爸是div的p才拥有效果，不能是爷爷，曾爷爷
+相邻兄弟选择器: +
+div +p ..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -91,44 +95,35 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">JS实现先阅读协议，后注册</h2>
-            <div class="post-date">2021-04-01</div>
+            <h2 class="post-title">CSS选择器</h2>
+            <div class="post-date">2021-04-17</div>
             
             <div class="post-content" v-pre>
-              <p>每当我们想注册账号，或者安装软件时，总有一些细致严谨的公司，他们让你在安装前阅读长长的协议。这背后的原理是什么呢？<br>
-我们先应该了解JS里的 scrollHeight(文档内容实际高度，包括超出视窗的溢出部分)，scrollTop(滚动条相对于文档顶部的高度，即：滚动距离)，clientHeight(窗口的高度) 属性。</p>
-<h1 id="scrollheight">scrollHeight()</h1>
-<p>scrollHeight()是window的属性<br>
-它是指：文档内容的实际高度，一个网页从页头到页尾。</p>
-<h1 id="scrolltop">scrollTop()</h1>
-<p>scrollTop()也是window的属性<br>
-它是指：垂直滚动条滚动的距离，滚动条下拉的距离。</p>
-<h1 id="clientheight">clientHeight()</h1>
-<p>clientHeight()是window的属性<br>
-翻译过来就很理解：用户所能看到的高度。<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1617280221051.png" alt="" loading="lazy"><br>
-现在我们应该可以理解背后的原理了吧</p>
-<h1 id="就是当红框框到底的时候即-scrollheight-scrolltop-clientheight">就是当红框框到底的时候，即       scrollHeight - scrollTop = clientHeight</h1>
-<pre><code class="language-javaScript">					//检查垂直滚动条是否滚动到底
- 				if(info.scrollHeight - info.scrollTop == info.clientHeight){
- 					//滚动条滚动到底，使表单项可用
- 					/*
- 					 * disabled属性可以设置一个元素是否禁用，
- 					 * 	如果设置为true，则元素禁用
- 					 * 	如果设置为false，则元素可用
- 					 */
- 					inputs[0].disabled = false;
- 					inputs[1].disabled = false;
- 				}</code></pre>
+              <h1 id="后代选择器-空格">后代选择器: 空格</h1>
+<p>很简单，例如div p {？} ：这说明div下的所有p后代都需要有？这个效果</p>
+<h1 id="子选择器">子选择器: &gt;</h1>
+<p>div&gt;p{} 说明那些唯一爸爸是div的p才拥有效果，不能是爷爷，曾爷爷</p>
+<h1 id="相邻兄弟选择器">相邻兄弟选择器: +</h1>
+<p>div +p {}</p>
+<pre><code class="language-js">&lt;div&gt;
+  &lt;p&gt;div 中的段落 1。&lt;/p&gt;
+  &lt;p&gt;div 中的段落 2。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;段落 3。不在 div 中。&lt;/p&gt;
+</code></pre>
+<p>p与div同级且相邻且p在div 后面出现</p>
+<h1 id="通用兄弟选择器-~">通用兄弟选择器: ~</h1>
+<p>div~p{}<br>
+选中与div同级的p</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/di-yi-ci-shi-yong-gridea/">
+                <a href="https://zhaojunjie-code.github.io/post/css-ding-wei-ji-zhi/">
                   <h3 class="post-title">
-                    第一次使用Gridea
+                    CSS定位机制
                   </h3>
                 </a>
               </div>
