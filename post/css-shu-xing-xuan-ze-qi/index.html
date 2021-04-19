@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Vue组件 | 杰</title>
+<title>CSS-属性选择器 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,12 +18,10 @@
 
 
 
-    <meta name="description" content="组件是一个拥有预定义选项的一个Vue实例
-定义语句
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)
-&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;ap..." />
+    <meta name="description" content="a[target=&quot;_blank&quot;]{
+    background-color:yellow;
+}
+&lt;a href=&quot;https://www.w3school.com.cn&quot;&gt;w3sch..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -95,36 +93,27 @@ Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Vue组件</h2>
-            <div class="post-date">2021-04-07</div>
+            <h2 class="post-title">CSS-属性选择器</h2>
+            <div class="post-date">2021-04-19</div>
             
             <div class="post-content" v-pre>
-              <h1 id="组件是一个拥有预定义选项的一个vue实例">组件是一个拥有预定义选项的一个Vue实例</h1>
-<p>定义语句<br>
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)</p>
-<pre><code class="language-javaScript">&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;app9&quot;&gt;
-        &lt;button-counter&gt;&lt;/button-counter&gt;          &lt;!--组件标签--&gt;
-    &lt;/div&gt;
-&lt;\body&gt;
-&lt;\html&gt;
-&lt;script&gt;
-        Vue.component('button-counter', {             //Vue组件
-            data: function () {   //on:click响应函数
-                return {
-                    count: 0     //初始化默认
-                }
-            },
-            template: &quot;&lt;button v-on:click='count++'&gt;你点击了{{count}}次&lt;/button&gt;&quot;    //模板,使组件标签拥有模板的作用，我们看到模板是一个button标签，里面自带Vue的v-on绑定函数，让count++，函数在上面的DATA域
-        })
-        var app9 = new Vue({              //创建Vue对象
-            el: &quot;#app9&quot;,                          //元素截获
-            data: {                                     //数据对象
+              <pre><code class="language-js">a[target=&quot;_blank&quot;]{
+    background-color:yellow;
+}
+&lt;a href=&quot;https://www.w3school.com.cn&quot;&gt;w3school.com.cn&lt;/a&gt;
+&lt;a href=&quot;http://www.disney.com&quot; target=&quot;_blank&quot;&gt;disney.com&lt;/a&gt;
+</code></pre>
+<p>注意观察代码，第二个a标签，设置了target，对应于属性选择器中的target=&quot;_blank&quot;。所以只会修饰这个a标签。</p>
+<h1 id="input标签很常用">input标签很常用</h1>
+<pre><code class="language-js">[class^=&quot;top&quot;] {                  //class选择器名字以top开头的的所有元素进行修饰
 
-            }
-        });
-&lt;\script&gt;       
+}
+input[type=&quot;text&quot;] {         //input标签，是文本输入框的进行修饰
+
+}
+input[type=&quot;button&quot;] {      //input标签，是按钮的进行修饰
+
+}
 </code></pre>
 
             </div>
@@ -132,9 +121,9 @@ Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/ajax/">
+                <a href="https://zhaojunjie-code.github.io/post/css-ying-yong-nian-xing-dao-hang-lan-xia-la-cai-dan/">
                   <h3 class="post-title">
-                    AJAX
+                    CSS应用-粘性导航栏、下拉菜单
                   </h3>
                 </a>
               </div>

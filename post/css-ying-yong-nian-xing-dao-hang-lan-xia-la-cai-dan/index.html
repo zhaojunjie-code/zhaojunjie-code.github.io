@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CSS应用-粘性导航栏、下拉菜单 | 杰</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhaojunjie-code.github.io//favicon.ico?v=1618850711984">
+<link rel="stylesheet" href="https://zhaojunjie-code.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="提起粘性，我们想到了position:fixed;这是实现粘性布局的方法，被修饰的元素好像黏在了网页上，不随鼠标scroll。
+有一种粘性的导航栏，我们一定见过，当鼠标下滚动使，我们看到的导航栏距离页面顶部距离为0时，此时，导航栏就像黏在上..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhaojunjie-code.github.io/">
+        <img src="https://zhaojunjie-code.github.io//images/avatar.png?v=1618850711984" class="site-logo">
+        <h1 class="site-title">杰</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      前端探索
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhaojunjie-code.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CSS应用-粘性导航栏、下拉菜单</h2>
+            <div class="post-date">2021-04-19</div>
+            
+            <div class="post-content" v-pre>
+              <p>提起粘性，我们想到了position:fixed;这是实现粘性布局的方法，被修饰的元素好像黏在了网页上，不随鼠标scroll。<br>
+有一种粘性的导航栏，我们一定见过，当鼠标下滚动使，我们看到的导航栏距离页面顶部距离为0时，此时，导航栏就像黏在上面一样，当我们上滚动鼠标，到一定距离时，他又开始随鼠标动起来。这就是粘性导航栏。</p>
+<h1 id="用到了相对定位方法">用到了相对定位方法</h1>
+<pre><code class="language-js">position:sticky;
+top:0;
+</code></pre>
+<p>粘性元素会根据滚动位置在相对和固定之间切换。它是相对定位的，直到在视口中遇到给定的偏移位置为止</p>
+<h1 id="下拉菜单">下拉菜单</h1>
+<p>.dropdown{}<br>
+.dropdown-content{}<br>
+设置两个样式，其中-content，是隐藏的菜单，初始应该为display:none;需要后续的js修改其值不为none，或者CSS用hover修饰，当鼠标移到父元素身上，子元素display:block;；还要设置z-index:;(重叠顺序)，应该越大越好，才能看到下拉菜单；还有一个最关键的样式-定位！我们能够想到，父元素相对定位，下拉菜单绝对定位；如果不设置子元素的相对位置，默认出现在父元素的下方。</p>
+<pre><code class="language-js">.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 12px 16px;
+z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+</code></pre>
+<p><img src="https://zhaojunjie-code.github.io//post-images/1618832969931.PNG" alt="" loading="lazy"><br>
+注意：html写法</p>
+<pre><code class="language-js">&lt;div class=&quot;dropdown&quot;&gt;
+  &lt;span&gt;Mouse over me&lt;/span&gt;
+  &lt;div class=&quot;dropdown-content&quot;&gt;    //仍然被包含在里面
+    &lt;p&gt;Hello World!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>注意：下拉菜单默认是左对齐的，如果需要右对齐设置right:0;</p>
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    ul {
+        background-color: grey;
+        overflow: hidden;
+        list-style: none;
+    }
+    li {
+        float: left;
+    }
+    a {
+        padding: 14px 16px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: block;                /*加入可设置宽高*/
+    }
+    li a:hover {
+        background-color: yellowgreen;
+    }
+    .content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .content a{
+        color: black;
+        padding: 14px 16px;
+        text-align: left;
+        display: block;
+    }
+    .down:hover .content {
+        display: block;
+    }
+    .content a:hover {
+        background-color: #f1f1f1;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;News&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;down&quot;&gt;
+            &lt;a href=&quot;&quot;&gt;Dropdown&lt;/a&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;a href=&quot;&quot;&gt;linl1&lt;/a&gt;&lt;a href=&quot;&quot;&gt;link2&lt;/a&gt;&lt;a href=&quot;&quot;&gt;link3&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/css-opacity-bu-tou-ming-du/">
+                  <h3 class="post-title">
+                    CSS-opacity不透明度
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

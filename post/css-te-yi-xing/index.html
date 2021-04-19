@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Vue组件 | 杰</title>
+<title>CSS-特异性 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,12 +18,10 @@
 
 
 
-    <meta name="description" content="组件是一个拥有预定义选项的一个Vue实例
-定义语句
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)
-&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;ap..." />
+    <meta name="description" content="特异性是，CSS同时为某一元素设置了多种属性，这样会冲突。而浏览器总是会执行特异性高的那个语句。
+行内样式： 标签内style=&quot;&quot;
+ID： 页面元素唯一标识符 #navigation
+类、属性、伪类：.classes;..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -95,46 +93,43 @@ Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Vue组件</h2>
-            <div class="post-date">2021-04-07</div>
+            <h2 class="post-title">CSS-特异性</h2>
+            <div class="post-date">2021-04-20</div>
             
             <div class="post-content" v-pre>
-              <h1 id="组件是一个拥有预定义选项的一个vue实例">组件是一个拥有预定义选项的一个Vue实例</h1>
-<p>定义语句<br>
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)</p>
-<pre><code class="language-javaScript">&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;app9&quot;&gt;
-        &lt;button-counter&gt;&lt;/button-counter&gt;          &lt;!--组件标签--&gt;
-    &lt;/div&gt;
-&lt;\body&gt;
-&lt;\html&gt;
-&lt;script&gt;
-        Vue.component('button-counter', {             //Vue组件
-            data: function () {   //on:click响应函数
-                return {
-                    count: 0     //初始化默认
-                }
-            },
-            template: &quot;&lt;button v-on:click='count++'&gt;你点击了{{count}}次&lt;/button&gt;&quot;    //模板,使组件标签拥有模板的作用，我们看到模板是一个button标签，里面自带Vue的v-on绑定函数，让count++，函数在上面的DATA域
-        })
-        var app9 = new Vue({              //创建Vue对象
-            el: &quot;#app9&quot;,                          //元素截获
-            data: {                                     //数据对象
-
-            }
-        });
-&lt;\script&gt;       
+              <h1 id="特异性是css同时为某一元素设置了多种属性这样会冲突-而浏览器总是会执行特异性高的那个语句">特异性是，CSS同时为某一元素设置了多种属性，这样会冲突。而浏览器总是会执行特异性高的那个语句。</h1>
+<h2 id="行内样式-标签内style">行内样式： 标签内style=&quot;&quot;</h2>
+<h2 id="id-页面元素唯一标识符-navigation">ID： 页面元素唯一标识符 #navigation</h2>
+<h2 id="类-属性-伪类classes-attributeshover-focus">类、属性、伪类：.classes; [attributes];:hover、:focus</h2>
+<h2 id="元素和伪元素h1paimgbefore-after">元素和伪元素：h1,p,a,img;::before、::after</h2>
+<h2 id="比较特异性">比较特异性</h2>
+<p>从0开始，如果把元素和伪元素的特异性看成1；那么类、属性、伪类为10； ID为100；行内样式为1000；</p>
+<h2 id="特异性规则">特异性规则</h2>
+<ol>
+<li>特异性相同的情况下,执行后一条<br>
+比如说，写了</li>
+</ol>
+<pre><code class="language-js">h1 {background-color: yellow;}
+h1 {background-color: red;}
 </code></pre>
+<p>浏览器执行后一条语句。按照为变量赋值的角度取理解<br>
+2. ID选择器比属性选择器拥有更高的优先级；具体的ID选择器拥有更高的属性</p>
+<pre><code class="language-js">div#a {background-color: green;}
+#a {background-color: yellow;}
+div[id=a] {background-color: blue;}
+</code></pre>
+<p>第一条较具体，所以执行具体的ID选择器。<br>
+3. 上下文选择器比单一元素选择器更具体(在html里写的样式，总是比从外部导入.css文件的特异性更高)<br>
+4. 类选择器会打败任意数量的元素选择器。(别看类选择器是10,元素选择器是1，难道又11个元素选择器，就执行元素选择器的内容吗)，规定，类选择器会打败任意数量的元素选择器。</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/ajax/">
+                <a href="https://zhaojunjie-code.github.io/post/css-wang-ye-bu-ju-dan-wei/">
                   <h3 class="post-title">
-                    AJAX
+                    CSS-网页布局、单位
                   </h3>
                 </a>
               </div>

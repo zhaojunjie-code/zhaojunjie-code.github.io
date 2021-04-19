@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Vue组件 | 杰</title>
+<title>CSS-计数器 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,12 +18,10 @@
 
 
 
-    <meta name="description" content="组件是一个拥有预定义选项的一个Vue实例
-定义语句
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)
-&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;ap..." />
+    <meta name="description" content="counter-reset: count;  设置计数器
+注意，此语句为创建一个计数器，计数器名为count。那么这条语句写在自己身上还是哪里呢？
+当然是写在自己的父元素身上，父元素创建计数器，监控子元素的个数
+counter-increm..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -95,46 +93,24 @@ Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Vue组件</h2>
-            <div class="post-date">2021-04-07</div>
+            <h2 class="post-title">CSS-计数器</h2>
+            <div class="post-date">2021-04-19</div>
             
             <div class="post-content" v-pre>
-              <h1 id="组件是一个拥有预定义选项的一个vue实例">组件是一个拥有预定义选项的一个Vue实例</h1>
-<p>定义语句<br>
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)</p>
-<pre><code class="language-javaScript">&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;app9&quot;&gt;
-        &lt;button-counter&gt;&lt;/button-counter&gt;          &lt;!--组件标签--&gt;
-    &lt;/div&gt;
-&lt;\body&gt;
-&lt;\html&gt;
-&lt;script&gt;
-        Vue.component('button-counter', {             //Vue组件
-            data: function () {   //on:click响应函数
-                return {
-                    count: 0     //初始化默认
-                }
-            },
-            template: &quot;&lt;button v-on:click='count++'&gt;你点击了{{count}}次&lt;/button&gt;&quot;    //模板,使组件标签拥有模板的作用，我们看到模板是一个button标签，里面自带Vue的v-on绑定函数，让count++，函数在上面的DATA域
-        })
-        var app9 = new Vue({              //创建Vue对象
-            el: &quot;#app9&quot;,                          //元素截获
-            data: {                                     //数据对象
-
-            }
-        });
-&lt;\script&gt;       
-</code></pre>
+              <h1 id="counter-reset-count-设置计数器">counter-reset: count;  设置计数器</h1>
+<h1 id="注意此语句为创建一个计数器计数器名为count-那么这条语句写在自己身上还是哪里呢">注意，此语句为创建一个计数器，计数器名为count。那么这条语句写在自己身上还是哪里呢？</h1>
+<p>当然是写在自己的父元素身上，父元素创建计数器，监控子元素的个数</p>
+<h1 id="counter-incrementcount-计数器加一">counter-increment:count;  计数器加一</h1>
+<h1 id="注意此语句在子元素中写着-当遇到子元素则计数器1">注意，此语句在子元素中写着。当遇到子元素，则计数器+1.</h1>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/ajax/">
+                <a href="https://zhaojunjie-code.github.io/post/css-shu-xing-xuan-ze-qi/">
                   <h3 class="post-title">
-                    AJAX
+                    CSS-属性选择器
                   </h3>
                 </a>
               </div>

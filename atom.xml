@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-19T11:01:12.052Z</updated>
+    <updated>2021-04-19T16:45:14.431Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,212 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[CSS-特异性]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-te-yi-xing/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-te-yi-xing/">
+        </link>
+        <updated>2021-04-19T16:32:54.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="特异性是css同时为某一元素设置了多种属性这样会冲突-而浏览器总是会执行特异性高的那个语句">特异性是，CSS同时为某一元素设置了多种属性，这样会冲突。而浏览器总是会执行特异性高的那个语句。</h1>
+<h2 id="行内样式-标签内style">行内样式： 标签内style=&quot;&quot;</h2>
+<h2 id="id-页面元素唯一标识符-navigation">ID： 页面元素唯一标识符 #navigation</h2>
+<h2 id="类-属性-伪类classes-attributeshover-focus">类、属性、伪类：.classes; [attributes];:hover、:focus</h2>
+<h2 id="元素和伪元素h1paimgbefore-after">元素和伪元素：h1,p,a,img;::before、::after</h2>
+<h2 id="比较特异性">比较特异性</h2>
+<p>从0开始，如果把元素和伪元素的特异性看成1；那么类、属性、伪类为10； ID为100；行内样式为1000；</p>
+<h2 id="特异性规则">特异性规则</h2>
+<ol>
+<li>特异性相同的情况下,执行后一条<br>
+比如说，写了</li>
+</ol>
+<pre><code class="language-js">h1 {background-color: yellow;}
+h1 {background-color: red;}
+</code></pre>
+<p>浏览器执行后一条语句。按照为变量赋值的角度取理解<br>
+2. ID选择器比属性选择器拥有更高的优先级；具体的ID选择器拥有更高的属性</p>
+<pre><code class="language-js">div#a {background-color: green;}
+#a {background-color: yellow;}
+div[id=a] {background-color: blue;}
+</code></pre>
+<p>第一条较具体，所以执行具体的ID选择器。<br>
+3. 上下文选择器比单一元素选择器更具体(在html里写的样式，总是比从外部导入.css文件的特异性更高)<br>
+4. 类选择器会打败任意数量的元素选择器。(别看类选择器是10,元素选择器是1，难道又11个元素选择器，就执行元素选择器的内容吗)，规定，类选择器会打败任意数量的元素选择器。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS-网页布局、单位]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-wang-ye-bu-ju-dan-wei/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-wang-ye-bu-ju-dan-wei/">
+        </link>
+        <updated>2021-04-19T16:02:29.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="设置并排列宽相等的列用100并排的几个列取百分号">设置并排列宽相等的列用100/并排的几个列取百分号</h1>
+<h1 id="设置并排不等列宽的列保证中间部分为核心部分一般中间部分占据的百分比大一些">设置并排不等列宽的列保证中间部分为核心部分，一般中间部分占据的百分比大一些。</h1>
+<h1 id="绝对单位长度是定死的">绝对单位：长度是定死的</h1>
+<p>96px=2.54cm</p>
+<h1 id="相对长度长度是相对的">相对长度：长度是相对的</h1>
+<p>em:相对于字体大小font-size;<br>
+2em=2*font-size<br>
+rem:相对于根元素字体的大小font-size</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS-网页布局]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-wang-ye-bu-ju/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-wang-ye-bu-ju/">
+        </link>
+        <updated>2021-04-19T16:02:29.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="设置并排的列用100并排的几个列取百分号">设置并排的列用100/并排的几个列取百分号</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS-计数器]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-ji-shu-qi/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-ji-shu-qi/">
+        </link>
+        <updated>2021-04-19T15:36:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="counter-reset-count-设置计数器">counter-reset: count;  设置计数器</h1>
+<h1 id="注意此语句为创建一个计数器计数器名为count-那么这条语句写在自己身上还是哪里呢">注意，此语句为创建一个计数器，计数器名为count。那么这条语句写在自己身上还是哪里呢？</h1>
+<p>当然是写在自己的父元素身上，父元素创建计数器，监控子元素的个数</p>
+<h1 id="counter-incrementcount-计数器加一">counter-increment:count;  计数器加一</h1>
+<h1 id="注意此语句在子元素中写着-当遇到子元素则计数器1">注意，此语句在子元素中写着。当遇到子元素，则计数器+1.</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS-属性选择器]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-shu-xing-xuan-ze-qi/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-shu-xing-xuan-ze-qi/">
+        </link>
+        <updated>2021-04-19T13:57:17.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-js">a[target=&quot;_blank&quot;]{
+    background-color:yellow;
+}
+&lt;a href=&quot;https://www.w3school.com.cn&quot;&gt;w3school.com.cn&lt;/a&gt;
+&lt;a href=&quot;http://www.disney.com&quot; target=&quot;_blank&quot;&gt;disney.com&lt;/a&gt;
+</code></pre>
+<p>注意观察代码，第二个a标签，设置了target，对应于属性选择器中的target=&quot;_blank&quot;。所以只会修饰这个a标签。</p>
+<h1 id="input标签很常用">input标签很常用</h1>
+<pre><code class="language-js">[class^=&quot;top&quot;] {                  //class选择器名字以top开头的的所有元素进行修饰
+
+}
+input[type=&quot;text&quot;] {         //input标签，是文本输入框的进行修饰
+
+}
+input[type=&quot;button&quot;] {      //input标签，是按钮的进行修饰
+
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS应用-粘性导航栏、下拉菜单]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-ying-yong-nian-xing-dao-hang-lan-xia-la-cai-dan/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-ying-yong-nian-xing-dao-hang-lan-xia-la-cai-dan/">
+        </link>
+        <updated>2021-04-19T11:01:53.000Z</updated>
+        <content type="html"><![CDATA[<p>提起粘性，我们想到了position:fixed;这是实现粘性布局的方法，被修饰的元素好像黏在了网页上，不随鼠标scroll。<br>
+有一种粘性的导航栏，我们一定见过，当鼠标下滚动使，我们看到的导航栏距离页面顶部距离为0时，此时，导航栏就像黏在上面一样，当我们上滚动鼠标，到一定距离时，他又开始随鼠标动起来。这就是粘性导航栏。</p>
+<h1 id="用到了相对定位方法">用到了相对定位方法</h1>
+<pre><code class="language-js">position:sticky;
+top:0;
+</code></pre>
+<p>粘性元素会根据滚动位置在相对和固定之间切换。它是相对定位的，直到在视口中遇到给定的偏移位置为止</p>
+<h1 id="下拉菜单">下拉菜单</h1>
+<p>.dropdown{}<br>
+.dropdown-content{}<br>
+设置两个样式，其中-content，是隐藏的菜单，初始应该为display:none;需要后续的js修改其值不为none，或者CSS用hover修饰，当鼠标移到父元素身上，子元素display:block;；还要设置z-index:;(重叠顺序)，应该越大越好，才能看到下拉菜单；还有一个最关键的样式-定位！我们能够想到，父元素相对定位，下拉菜单绝对定位；如果不设置子元素的相对位置，默认出现在父元素的下方。</p>
+<pre><code class="language-js">.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 12px 16px;
+z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+</code></pre>
+<p><img src="https://zhaojunjie-code.github.io//post-images/1618832969931.PNG" alt="" loading="lazy"><br>
+注意：html写法</p>
+<pre><code class="language-js">&lt;div class=&quot;dropdown&quot;&gt;
+  &lt;span&gt;Mouse over me&lt;/span&gt;
+  &lt;div class=&quot;dropdown-content&quot;&gt;    //仍然被包含在里面
+    &lt;p&gt;Hello World!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>注意：下拉菜单默认是左对齐的，如果需要右对齐设置right:0;</p>
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    ul {
+        background-color: grey;
+        overflow: hidden;
+        list-style: none;
+    }
+    li {
+        float: left;
+    }
+    a {
+        padding: 14px 16px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: block;                /*加入可设置宽高*/
+    }
+    li a:hover {
+        background-color: yellowgreen;
+    }
+    .content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .content a{
+        color: black;
+        padding: 14px 16px;
+        text-align: left;
+        display: block;
+    }
+    .down:hover .content {
+        display: block;
+    }
+    .content a:hover {
+        background-color: #f1f1f1;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;News&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;down&quot;&gt;
+            &lt;a href=&quot;&quot;&gt;Dropdown&lt;/a&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;a href=&quot;&quot;&gt;linl1&lt;/a&gt;&lt;a href=&quot;&quot;&gt;link2&lt;/a&gt;&lt;a href=&quot;&quot;&gt;link3&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS-opacity不透明度]]></title>
         <id>https://zhaojunjie-code.github.io/post/css-opacity-bu-tou-ming-du/</id>
@@ -163,436 +369,6 @@ div:hover p {
 <h3 id="常见的清除浮动和父元素跟随子元素撑开">常见的清除浮动和父元素跟随子元素撑开</h3>
 <h4 id="清除浮动clearleftboth用于与浮动元素同级的元素在布局时不会跑到其下面而是重新占一行">清除浮动clear:left,both;用于与浮动元素同级的元素，在布局时，不会跑到其下面，而是重新占一行。</h4>
 <h4 id="父元素终于认这个孩子了overflowhidden">父元素终于认这个孩子了：overflow:hidden;</h4>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Web前端方向]]></title>
-        <id>https://zhaojunjie-code.github.io/post/web-qian-duan-fang-xiang/</id>
-        <link href="https://zhaojunjie-code.github.io/post/web-qian-duan-fang-xiang/">
-        </link>
-        <updated>2021-04-16T00:41:35.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="就业">就业</h1>
-<h2 id="一-春招时间3-4月">一、春招时间：3-4月</h2>
-<h2 id="二-学习内容">二、学习内容</h2>
-<ul>
-<li>html/css</li>
-<li><strong>JavaScript（ES5、ES6）</strong></li>
-<li>框架（React或者Vue）</li>
-<li>浏览器工作原理与实践</li>
-<li>计算机网络（重点是HTTP、TCP）</li>
-<li>数据结构与算法</li>
-</ul>
-<h2 id="三-简历准备">三、简历准备</h2>
-<ul>
-<li>博客
-<ul>
-<li>Typora</li>
-<li>Markdown</li>
-<li>Gridea</li>
-</ul>
-</li>
-<li>项目
-<ul>
-<li>实训项目
-<ul>
-<li>node.js
-<ul>
-<li>链接：https://pan.baidu.com/s/1BHMKAQ_7sS8BnlOrcl8BUg<br>
-提取码：ywva<br>
-复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>比赛项目</li>
-</ul>
-</li>
-</ul>
-<h2 id="四-学习资料">四、学习资料</h2>
-<ul>
-<li>JavaScript
-<ul>
-<li>JavaScript高级程序设计（ES5）
-<ul>
-<li>音频教程：https://www.ximalaya.com/gerenchengzhang/3740790/</li>
-</ul>
-</li>
-<li>ECMAScript 6入门
-<ul>
-<li>https://es6.ruanyifeng.com/#README</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>计算机网络
-<ul>
-<li>图解TCP/IP</li>
-<li>图解HTTP</li>
-<li>计算机网络自顶向下</li>
-<li><strong>透视HTTP</strong>
-<ul>
-<li>链接：https://pan.baidu.com/s/1SI8bD0t9VI29qJgZdrcAug<br>
-提取码：pe41<br>
-复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>浏览器工作原理与实践
-<ul>
-<li>链接：https://pan.baidu.com/s/1gO05ERziH9r3aYoKuZA9sw<br>
-提取码：8wqy<br>
-复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享</li>
-</ul>
-</li>
-<li>数据结构与算法
-<ul>
-<li>Leetcode</li>
-<li>牛客（剑指offer）</li>
-</ul>
-</li>
-<li>搜索
-<ul>
-<li>掘金</li>
-<li>思否</li>
-<li>知乎</li>
-<li>MDN</li>
-</ul>
-</li>
-<li>面试
-<ul>
-<li>牛客</li>
-<li>实习僧</li>
-<li>拉钩</li>
-<li>Boss直聘</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSS中级总结]]></title>
-        <id>https://zhaojunjie-code.github.io/post/css-zhong-ji-zong-jie/</id>
-        <link href="https://zhaojunjie-code.github.io/post/css-zhong-ji-zong-jie/">
-        </link>
-        <updated>2021-04-12T12:39:49.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="display属性">display属性</h1>
-<p>如何显示一个元素：block，inline<br>
-首先要了解块级元素：占据一行的宽度<br>
-div,h1-h6,p,form,header,footer,section</p>
-<p>行内元素：占据所需的宽度<br>
-span,a,img</p>
-<h2 id="覆盖默认的display值">覆盖默认的display值</h2>
-<p>li{display:inline;}  li本来是块级元素，强制将其转变为行内元素<br>
-span{display:block;}span本来是行内元素，强制将其转变为块级元素<br>
-注意这种强制转换为行内元素的标签，是不能为其设置高度的</p>
-<h2 id="displaynone-通常与js用来隐藏显示元素-该元素的位置会被其他元素占据">display:none 通常与JS用来隐藏显示元素 该元素的位置会被其他元素占据</h2>
-<pre><code class="language-javascript">document.getelementById(&quot;btn01).onclick = function(){  //为按钮绑定单击响应函数
-      document.getelementById(&quot;box01).style.display = &quot;none&quot;;
-}
-</code></pre>
-<h2 id="visibilityhidden指定元素是否可见元素所占据的位置还是存在">visibility：hidden指定元素是否可见，元素所占据的位置还是存在</h2>
-<h1 id="position定位">position定位</h1>
-<h2 id="static浏览器为其自动安排位置">static:浏览器为其自动安排位置</h2>
-<h2 id="relative元素相对于其正常位置进行定位这时要用上lefttopbottom">relative:元素相对于其正常位置进行定位；这时要用上left:;top:;bottom:;</h2>
-<h2 id="fixed相对于屏幕定位鼠标滚动页面它始终处于同一位置">fixed:相对于屏幕定位，鼠标滚动页面，它始终处于同一位置</h2>
-<h2 id="absolute相对于最近的定位了的祖先元素进行定位-如果没有祖先则使用文档主体并随页面滚动">absolute：相对于最近的定位了的祖先元素进行定位。如果没有祖先，则使用文档主体，并随页面滚动。</h2>
-<p>&quot;定位了的祖先&quot;:除了static属性以外的其他属性fixed,relative...都可以被定义为&quot;定位了的祖先&quot;</p>
-<h2 id="fixed粘性定位-粘性定位开始并不是粘性定位而是relative直到至少给定一个topleft来指明什么时侯开始成为粘性定位">fixed:粘性定位。粘性定位开始并不是粘性定位，而是relative；直到至少给定一个top,left,...来指明什么时侯开始成为粘性定位。</h2>
-<h2 id="z-index重叠定位">z-index重叠定位</h2>
-<p>用来确定重叠的元素，呈现给用户的顺序。<br>
-z-index=-1 堆叠顺序较低，所以成为了背景板<br>
-z-index越高，则越是主角</p>
-<h1 id="overflow-溢出指在内容太大而无法放在指定区域用来决定是裁剪还是添加滚动条">overflow 溢出：指在内容太大而无法放在指定区域，用来决定是裁剪还是添加滚动条</h1>
-<h2 id="visible默认溢出就溢出在外面接着渲染">visible:默认，溢出就溢出，在外面接着渲染</h2>
-<h2 id="hidden裁剪溢出部分不要了">hidden:裁剪，溢出部分不要了</h2>
-<h2 id="scroll加滚动条">scroll:加滚动条</h2>
-<h1 id="float浮动">float浮动</h1>
-<h2 id="inherit继承父级float值">inherit继承父级float值</h2>
-<h1 id="clear清除">clear清除</h1>
-<p>##none：允许两侧都有浮动元素   会出现不浮动元素嵌入到浮动元素下面</p>
-<h2 id="left左侧不允许浮动元素左侧被管制-如果">left：左侧不允许浮动元素，左侧被管制   如果</h2>
-<h2 id="right同上">right：同上</h2>
-<h2 id="both左侧或右侧不允许浮动元素">both：左侧或右侧不允许浮动元素</h2>
-<h2 id="inherit继承父级的clear">inherit：继承父级的clear</h2>
-<h2 id="清除原理-一个div1左浮动另一个div2不浮动则会出现给用户这样的情况div2出现在div1的下面当div2使用clearleft时浏览器检查div2发现其左侧有div1在浮动他会清除这种效果本来div1是左漂浮起来了div2在其下面浏览器将div1的投影也占位div2自然而然就跑到了div1的一下一行注意float与clear是对应的div1-floatleft-那么div2-clearleft这样才会起作用">清除原理： 一个div1左浮动，另一个div2不浮动；则会出现给用户这样的情况，div2出现在div1的下面，当div2使用clear:left;时，浏览器检查div2，发现其左侧有div1在浮动，他会清除这种效果(本来div1是左漂浮起来了，div2在其下面，浏览器将div1的投影也占位，div2自然而然就跑到了div1的一下一行)注意float与clear是对应的div1 float:left 那么div2 clear:left这样才会起作用</h2>
-<h1 id="box-sizingborder-box-强制限制内边距和边框的厚度不能撑开盒子除非内边距和边框厚度设置的太离谱为了保证内容盒子会被放大">box-sizing:border-box; 强制限制内边距和边框的厚度不能撑开盒子(除非内边距和边框厚度设置的太离谱，为了保证内容，盒子会被放大)</h1>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSS基础总结]]></title>
-        <id>https://zhaojunjie-code.github.io/post/css-zong-jie/</id>
-        <link href="https://zhaojunjie-code.github.io/post/css-zong-jie/">
-        </link>
-        <updated>2021-04-12T06:06:14.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="background">background</h1>
-<h2 id="background-image-背景图">background-image 背景图</h2>
-<p>默认情况下background-image属性在水平和垂直方向上都重复的图像</p>
-<h2 id="background-repeat-设置重复方向">background-repeat  设置重复方向</h2>
-<p>repeatx:水平方向重复<br>
-repeaty:垂直方向上重复<br>
-no-repeat:不重复</p>
-<h2 id="background-position-设置图片位置">background-position  设置图片位置</h2>
-<p>right top :右上角</p>
-<h2 id="background-attachment-设置图片附着">background-attachment 设置图片附着</h2>
-<p>fixed:一直附着在网页上，随着鼠标滚动 client右上角<br>
-scroll:不随鼠标滚动，定死在右上角<br>
-简写</p>
-<pre><code class="language-css">body {
-background: #ffffff url(&quot;tree.png&quot;) no-repeat right top;  //注意顺序 颜色，背景图，重复，位置
-}
-</code></pre>
-<h1 id="border">border</h1>
-<h2 id="border-style-设置边框的类型">border-style 设置边框的类型</h2>
-<p>dotted - 定义点线边框<br>
-*dashed - 定义虚线边框<br>
-*solid - 定义实线边框<br>
-double - 定义双边框<br>
-groove - 定义 3D 坡口边框。效果取决于 border-color 值<br>
-ridge - 定义 3D 脊线边框。效果取决于 border-color 值<br>
-inset - 定义 3D inset 边框。效果取决于 border-color 值<br>
-outset - 定义 3D outset 边框。效果取决于 border-color 值<br>
-none - 定义无边框<br>
-hidden - 定义隐藏边框</p>
-<h2 id="border-width-边框宽度">border-width 边框宽度</h2>
-<p>medium,thick,<br>
-还可设置四个值(上右下左)，可以设置个边的长度</p>
-<h2 id="border-color-边框颜色">border-color 边框颜色</h2>
-<p>同上</p>
-<h2 id="border-radius-添加圆角">border-radius 添加圆角</h2>
-<p>radius越大，左右边框越圆</p>
-<h1 id="margin-外边距">margin 外边距</h1>
-<h2 id="toprightbottomleft">top;right,bottom,left</h2>
-<p>auto - 浏览器来计算外边距<br>
-length - 以 px、pt、cm 等单位指定外边距<br>
-% - 指定以包含元素宽度的百分比计的外边距<br>
-inherit - 指定应从父元素继承外边距</p>
-<h2 id="margin简写">margin简写</h2>
-<p>四个值：上，右，下，左<br>
-三个值：上，右左，下<br>
-两个值：上下，左右<br>
-一个值：上右下左<br>
-auto:元素在其容器中水平居中，该元素占据指定宽度，并且甚于空间将在左右边界之间平均分配<br>
-inherit:</p>
-<pre><code class="language-css">div {
-  border: 1px solid red;
-  margin-left: 100px;
-}
-p.ex1 {
-  margin-left: inherit;      //class=ex1的元素，继承父元素div的外边距，也为margin-left: 100px;
-}
-</code></pre>
-<h2 id="外边距合并">外边距合并</h2>
-<h3 id="垂直外边距当两个垂直外边距相遇他们会合并成一个外边距">垂直外边距：当两个垂直外边距相遇，他们会合并成一个外边距</h3>
-<p><img src="https://zhaojunjie-code.github.io//post-images/1618209661668.PNG" alt="" loading="lazy"><br>
-解释一下：程序员的疏忽，给上面一个盒子设置了下边距，又给下面一个盒子设置了上边距；边距相包含，则浏览器会找出两个边距较大的作为包含后的边距</p>
-<h3 id="嵌套外边距合并当两个盒子嵌套在一起父元素没有设置上内边距及边框则父元素的上外边距会与子元素的上外边距合并取较大者">嵌套外边距合并：当两个盒子嵌套在一起，父元素没有设置上内边距及边框，则父元素的上外边距会与子元素的上外边距合并，取较大者</h3>
-<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618210496706.PNG" alt="" loading="lazy"></figure>
-<h3 id="甚至有空元素设置了上外边距和下外边距上下会合并取较大者">甚至有空元素，设置了上外边距和下外边距，上下会合并，取较大者</h3>
-<h3 id="解决方案">解决方案：</h3>
-<p>父元素加上 overflow:hidden的解除坍塌功能;<br>
-父元素加上边框 border:1px solid transparent设边框加透明，不推荐；<br>
-父元素或子元素 浮动或者定位</p>
-<h1 id="padding-内边距">padding 内边距</h1>
-<p>top,right,bottom,left<br>
-length - 以 px、pt、cm 等单位指定内边距<br>
-% - 指定以包含元素宽度的百分比计的内边距<br>
-inherit - 指定应从父元素继承内边距<br>
-基本操作根外边距一样：四个值，三个值，两个值，一个值</p>
-<h2 id="padding可以撑大定义的width">padding可以撑大定义的width</h2>
-<p>解决方案：box-sizing:border-box；width固定，不允许撑大width</p>
-<h1 id="widthheight宽度高度不包括内边距外边距和边框">width,height宽度，高度：不包括内边距，外边距，和边框。</h1>
-<p>auto - 默认。浏览器计算高度和宽度。<br>
-length - 以 px、cm 等定义高度/宽度。<br>
-% - 以包含块的百分比定义高度/宽度。<br>
-initial - 将高度/宽度设置为默认值。<br>
-inherit - 从其父值继承高度/宽度。</p>
-<h2 id="max-width-设置最大宽度">max-width 设置最大宽度</h2>
-<p>他的用处是：动态的宽度，随着浏览器窗口大小分配到宽度，但最大不呢个超过max-width</p>
-<h1 id="框模型">框模型</h1>
-<figure data-type="image" tabindex="2"><img src="https://zhaojunjie-code.github.io//post-images/1618212892530.PNG" alt="" loading="lazy"></figure>
-<h1 id="轮廓outline边框之外加一些渲染">轮廓outline：边框之外加一些渲染</h1>
-<p>outline-style<br>
-outline-color<br>
-outline-width 轮廓宽度<br>
-outline-offset 轮廓与边框的距离<br>
-outline</p>
-<pre><code class="language-css"> outline: 1px solid red;
-</code></pre>
-<h1 id="文本">文本</h1>
-<h2 id="color-background-color">color background-color</h2>
-<p>字体颜色和背景颜色</p>
-<h2 id="text-align-文本对齐">text-align 文本对齐</h2>
-<p>center:居中<br>
-left:左<br>
-right:右<br>
-justify:使一段文章的每一行宽度都相等，浏览器会自动的为，不能成为一行的添加空格，凑成一行下图，注意到浏览器自动添加空格，使每一行宽度都一样<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1618225316912.PNG" alt="" loading="lazy"></p>
-<h2 id="direction文本方向">direction文本方向</h2>
-<p>ltr:left to right    默认方向：从左向右  左对齐<br>
-rtl:right to left  自定义方向：从左向右 右对齐<br>
-inherit：继承父元素的方向</p>
-<h2 id="unicode-bidi-用于同一个页面里存在从不同方向读进的文本显示与direction同时使用确定文本方向">unicode-bidi: 用于同一个页面里存在从不同方向读进的文本显示,与direction同时使用，确定文本方向</h2>
-<p>有以下的取值<br>
-normal:同原来的方向一样<br>
-bidi-override:按照direction的值，排序如果是左对齐，就正着来，右对齐就从反着写。<br>
-embed:作用于行内元素，按照direction的值决定插入在哪里，正着写</p>
-<h2 id="vertical-align-垂直对齐">vertical-align 垂直对齐</h2>
-<p>top: 文本顶部对齐<br>
-middle:文本中间对齐<br>
-bottom:文本底部对齐<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1618227261063.PNG" alt="" loading="lazy"><br>
-#text-decoration 文本装饰<br>
-none:用于从链接上删除下划线<br>
-line-through:删除线</p>
-<h2 id="text-transform文本转换">text-transform文本转换</h2>
-<p>uppercase:大写<br>
-lowercase:小写<br>
-capitalize:开头字母大写</p>
-<h1 id="文字间距">文字间距</h1>
-<h2 id="text-indent文字缩进">text-indent文字缩进</h2>
-<p>第一行的缩进，写文章时空两个</p>
-<h2 id="letter-spacing-字母间距">letter-spacing 字母间距</h2>
-<p>指定文本中字符之间的间距<br>
-3px:字母与字母之间有3像素的距离<br>
--3px:字母于字母之间缩进3像素的距离</p>
-<h2 id="white-space-空白">white-space 空白</h2>
-<p>nowrap:禁用元素内文本的换行<br>
-#text-shadow 文本阴影<br>
-水平阴影，垂直阴影 单位px<br>
-#font-size 字体大小<br>
-注意的一点就是：1px = 16em<br>
-font简写<br>
-注意<br>
-size和family是必要的，还有style斜体italic；width粗细700</p>
-<h1 id="a链接">a链接</h1>
-<p>a.link:未访问的链接<br>
-a.visited：访问过的链接<br>
-a.hover:鼠标放上去时<br>
-a.active:链接被点击时</p>
-<h1 id="列表">列表</h1>
-<p>注意一点<br>
-list-style:none;之后，列表依然有边距，可以用margin:0;padding:0;删除边距</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Vue基础特性-数据、方法、数据绑定]]></title>
-        <id>https://zhaojunjie-code.github.io/post/vue-ji-chu-te-xing-shu-ju-fang-fa-shu-ju-bang-ding/</id>
-        <link href="https://zhaojunjie-code.github.io/post/vue-ji-chu-te-xing-shu-ju-fang-fa-shu-ju-bang-ding/">
-        </link>
-        <updated>2021-04-07T12:51:01.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="数据">数据</h1>
-<pre><code class="language-javascript">var data = { a: 1 }
-var vm = new Vue({
- data: data
-})
-vm.$data === data // -&gt; true
-vm.a === data.a // -&gt; true
-// 设置属性也会影响到原始数据
-vm.a = 2
-data.a // -&gt; 2
-// 反之亦然
-data.a = 3
-vm.a // -&gt; 3
-</code></pre>
-<p>如上，当在模板中使用{{a}},也会得到vm.a，修改vm.a，模板中的{{a}},也会改变，这称为</p>
-<h3 id="响应式数据">响应式数据</h3>
-<p>只有在初始化后的数据，才是响应式的，初始化后，再加入vm.b，这样不会有响应</p>
-<h1 id="方法">方法</h1>
-<h2 id="通过选择属性methods定义方法并通过v-on指令监听dom事件">通过选择属性methods:{},定义方法，并通过v-on指令监听DOM事件</h2>
-<pre><code class="language-javascript">&lt;button v-on:click=&quot;alert&quot;/&gt;alert&lt;button&gt;
-new Vue({
-el : '#app',
-data : { a : 1},
-methods : {
-　　 alert : function() {
-　　　 alert(this.a);
-　　 }
-}
-});
-</code></pre>
-<h1 id="数据绑定">数据绑定</h1>
-<p>1.文本插值<br>
-{{文本插值}}<br>
-2.HTML属性</p>
-<pre><code class="language-javascript">&lt;div id=&quot;id-{{id}}&quot;&gt;&lt;/div&gt; // &lt;div id=&quot;id-1&quot;&gt;&lt;/div&gt;
-</code></pre>
-<p>3.绑定表达式</p>
-<pre><code class="language-javascript">{{ index + 1 }} // 1
-{{ index == 0 ? 'a' : 'b'}} // a
-{{ name.split('').join('|') }} // V|u|e
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Vue基础特性-模板]]></title>
-        <id>https://zhaojunjie-code.github.io/post/vue-ji-chu-te-xing-mo-ban/</id>
-        <link href="https://zhaojunjie-code.github.io/post/vue-ji-chu-te-xing-mo-ban/">
-        </link>
-        <updated>2021-04-07T12:23:59.000Z</updated>
-        <content type="html"><![CDATA[<p>Vue.js的使用都是通过构造函数Vue({option})，创建一个Vue实例：</p>
-<pre><code class="language-javascript">var vm = new Vue({
-    el:                           //挂载html元素，准备操作它
-    template:
-})
-</code></pre>
-<h2 id="el-用来为实例提供挂载元素">el 用来为实例提供挂载元素</h2>
-<pre><code>el:'#app'
-</code></pre>
-<h2 id="默认将template值它的值一般都是html语句替换挂载元素即el对应的元素">默认将template值，(它的值一般都是html语句)替换挂载元素，即(el)对应的元素</h2>
-<h3 id="class合并挂载元素和模板根节点的属性-id则以模板根节点为属性">(class)合并挂载元素和模板根节点的属性, (id)则以模板根节点为属性</h3>
-<p>因为要在为template赋html语句。这样影响可读性<br>
-一般</p>
-<pre><code class="language-javascript">&lt;div id=&quot;app&quot;&gt;
-&lt;p&gt;123&lt;/p&gt;
-&lt;/div&gt;
-&lt;script id=&quot;tpl&quot; type=&quot;x-template&quot;&gt;           //script1
-&lt;div&gt;
-　　 &lt;p&gt;This is a tpl from script tag&lt;/p&gt;
-&lt;/div&gt;
-&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;                  //script2
-var vm = new Vue({
-　　 el : '#app',
-　　 template : '#tpl'                    //取自于script1
-});
-&lt;/script&gt;
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Vue组件]]></title>
-        <id>https://zhaojunjie-code.github.io/post/vue-zu-jian/</id>
-        <link href="https://zhaojunjie-code.github.io/post/vue-zu-jian/">
-        </link>
-        <updated>2021-04-07T04:11:27.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="组件是一个拥有预定义选项的一个vue实例">组件是一个拥有预定义选项的一个Vue实例</h1>
-<p>定义语句<br>
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)</p>
-<pre><code class="language-javaScript">&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;app9&quot;&gt;
-        &lt;button-counter&gt;&lt;/button-counter&gt;          &lt;!--组件标签--&gt;
-    &lt;/div&gt;
-&lt;\body&gt;
-&lt;\html&gt;
-&lt;script&gt;
-        Vue.component('button-counter', {             //Vue组件
-            data: function () {   //on:click响应函数
-                return {
-                    count: 0     //初始化默认
-                }
-            },
-            template: &quot;&lt;button v-on:click='count++'&gt;你点击了{{count}}次&lt;/button&gt;&quot;    //模板,使组件标签拥有模板的作用，我们看到模板是一个button标签，里面自带Vue的v-on绑定函数，让count++，函数在上面的DATA域
-        })
-        var app9 = new Vue({              //创建Vue对象
-            el: &quot;#app9&quot;,                          //元素截获
-            data: {                                     //数据对象
-
-            }
-        });
-&lt;\script&gt;       
-</code></pre>
 ]]></content>
     </entry>
 </feed>
