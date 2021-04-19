@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-17T10:32:35.987Z</updated>
+    <updated>2021-04-19T10:43:28.327Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,116 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[CSS-opacity不透明度]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-opacity-bu-tou-ming-du/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-opacity-bu-tou-ming-du/">
+        </link>
+        <updated>2021-04-19T07:32:37.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="opacity用于指定元素的不透明度00-10值越小越透明0表示完全透明1表示不透明">opacity用于指定元素的不透明度：0.0-1.0值越小，越透明.0表示完全透明，1表示不透明</h1>
+<h2 id="可以应用在轮播图的切换效果中">可以应用在轮播图的切换效果中。</h2>
+<h3 id="图片叠在一起设置计时器使上面一张图片的不透明度从1渐变到0下面的图片就显示出来了">图片叠在一起，设置计时器，使上面一张图片的不透明度从1渐变到0，下面的图片就显示出来了</h3>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS-伪类]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css-wei-lei/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css-wei-lei/">
+        </link>
+        <updated>2021-04-19T06:27:46.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="伪类用于定义元素的特殊状态">伪类用于定义元素的特殊状态</h1>
+<p>伪类语法</p>
+<pre><code class="language-js">selector:pseudo-class {
+    property:value;
+}
+</code></pre>
+<h2 id="悬停ahover当鼠标停在a链接上a会出现的效果同理悬停在div上divhover">悬停：a:hover{}当鼠标停在a链接上，a会出现的效果；同理，悬停在div上div:hover{},</h2>
+<h2 id="工具提示悬停鼠标停在div上显示p的效果">工具提示悬停：鼠标停在div上，显示p的效果</h2>
+<pre><code class="language-js">p {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+
+div:hover p {
+  display: block;
+}
+</code></pre>
+<h1 id="first-child伪类与指定的元素匹配并规定该元素是另一个元素的第一个子元素">:first-child伪类：与指定的元素匹配，并规定：该元素是另一个元素的第一个子元素</h1>
+<h1 id="注意处在-first-child-的前一个选择器是第一个子元素例如-ifirst-childi是第一个子元素p-ifirst-child在p中的第一个子元素i">注意：处在 :first-child 的前一个选择器，是第一个子元素；例如 i:first-child,i是第一个子元素；p i:first-child，在p中的第一个子元素i。</h1>
+<h1 id="p-first-child-i这种写法第一个子元素是p要修饰的内容是p里面的i">p :first-child i,这种写法，第一个子元素是p，要修饰的内容是p里面的i</h1>
+<p>三个例子</p>
+<ol>
+<li>匹配首个p元素</li>
+</ol>
+<pre><code class="language-js">p:first-child {
+    color: blue;
+}
+</code></pre>
+<ol start="2">
+<li>匹配所有p元素的首个i元素</li>
+</ol>
+<pre><code class="language-js">p i:first-child {
+    color:blue;
+}
+</code></pre>
+<p>3.匹配所有首个p元素中的所有i元素</p>
+<pre><code class="language-js">p :first-child i {
+    color:blue;
+}
+</code></pre>
+<h1 id="lang伪类允许您为不同的语言定义特殊的规则">:lang伪类：允许您为不同的语言定义特殊的规则。</h1>
+<pre><code class="language-js">q:lang(en) {
+  quotes: &quot;~&quot; &quot;~&quot;;
+}
+&lt;p&gt;Some text &lt;q lang=&quot;no&quot;&gt;A quote in a paragraph&lt;/q&gt; Some text.&lt;/p&gt;
+</code></pre>
+<p>效果：被q lang=&quot;no&quot;双标签包起来的元素：首尾加上了&quot;~&quot;号<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1618815815051.PNG" alt="" loading="lazy"></p>
+<h1 id="focus伪类为input标签渲染获取焦点时的效果">:focus伪类：为input标签，渲染获取焦点时的效果</h1>
+<pre><code class="language-js">input:focus{
+    background-color:yellow;
+}
+</code></pre>
+<p>效果：当鼠标点击input框时，input框背景颜色边黄</p>
+<h1 id="xbefore伪类-为所有x标签的内容之前是一个块添加样式-用content添加文本">X::before伪类: 为所有X标签的内容之前（是一个块）添加样式 用content:&quot;&quot;;添加文本，</h1>
+<pre><code class="language-js">p:before{
+    content:&quot;台词：！&quot;:
+}
+&lt;p&gt;你这个叛徒&lt;/p&gt;
+</code></pre>
+<p>效果：p标签渲染后的效果 ”台词：！你这个叛徒“</p>
+<h1 id="xfirst-letter伪类-首字母大写">X::first-letter伪类: 首字母大写</h1>
+<pre><code class="language-js">p:first-letter{
+    font-size:200%;
+}
+&lt;p&gt;hello&lt;/p&gt;
+</code></pre>
+<p>效果：Hello</p>
+<h1 id="selection伪类用户选择时的效果用户在网页上用鼠标选择一段文本进行复制通常文本的背景颜色会变蓝">::selection伪类：用户选择时的效果；用户在网页上用鼠标选择一段文本进行复制，通常文本的背景颜色会变蓝</h1>
+<pre><code class="language-js">::selection {
+    bakground-color:blue;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618816689269.PNG" alt="" loading="lazy"></figure>
+<h1 id="伪元素伪元素用于设置元素指定部分的样式">伪元素：伪元素用于设置元素指定部分的样式。</h1>
+<h1 id="注意双冒号">注意双冒号 ::</h1>
+<h2 id="first-letter-伪元素用于向文本的首字母添加特殊样式">::first-letter 伪元素用于向文本的首字母添加特殊样式。</h2>
+<h2 id="first-line-伪元素用于向文本的首行添加特殊样式">::first-line 伪元素用于向文本的首行添加特殊样式。</h2>
+<h2 id="伪元素和-css-类">伪元素和 CSS 类</h2>
+<pre><code class="language-js">.intro::first-letter {
+  color: #ff0000;
+  font-size: 200%;
+}
+</code></pre>
+<p>效果:为class=&quot;intro&quot;的类，首字母大写并设置颜色#ff0000</p>
+<h2 id="多个伪元素一个标签或一个类可以组合使用多个伪元素">多个伪元素：一个标签或一个类可以组合使用多个伪元素</h2>
+<h2 id="before伪元素">::before伪元素</h2>
+<p>content:;<br>
+可以添加文本: &quot;用引号括起来可以在一个标签或者一个类之前添加文本&quot;<br>
+可以添加图片:&quot;url(smiley.gif);</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS组合器]]></title>
         <id>https://zhaojunjie-code.github.io/post/css-xuan-ze-qi/</id>
@@ -45,9 +155,13 @@
 <h2 id="定位-相对定位-relative">定位-相对定位 relative</h2>
 <h3 id="positonrelative其元素并不会脱离文档流而是还出现在相对定位之前的位置但是可以通过topleftrightbottom设置其偏移距离注意它一直在文档流中仍然占据原来的空间-移动后会覆盖其他的框">positon:relative;其元素并不会脱离文档流，而是还出现在相对定位之前的位置，但是可以通过top,left,right,bottom设置其偏移距离，注意：它一直在文档流中，仍然占据原来的空间。移动后会覆盖其他的框</h3>
 <figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618652538672.PNG" alt="" loading="lazy"></figure>
-<h3 id="positonabsolute其元素会从文档流中删除并相对于一个已经定位的包含块定位如果没有包含块则相对于初始块定位元素原先在文档流中占据的空间会被浏览器关闭他之后的元素可能会上来补他的位置-元素定位后生成一个块级框而不论原来它在正常流中生成何种类型的框">positon:absolute;其元素会从文档流中删除，并相对于一个已经定位的包含块定位(如果没有包含块，则相对于初始块定位)，元素原先在文档流中占据的空间会被浏览器关闭，他之后的元素可能会上来补他的位置。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</h3>
+<h3 id="positonabsolute其元素会从文档流中删除完全脱离文档流并相对于一个已经定位的包含块定位如果没有包含块则相对于初始块定位元素原先在文档流中占据的空间会被浏览器关闭他之后的元素可能会上来补他的位置-元素定位后生成一个块级框而不论原来它在正常流中生成何种类型的框">positon:absolute;其元素会从文档流中删除(完全脱离文档流)，并相对于一个已经定位的包含块定位(如果没有包含块，则相对于初始块定位)，元素原先在文档流中占据的空间会被浏览器关闭，他之后的元素可能会上来补他的位置。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</h3>
 <figure data-type="image" tabindex="2"><img src="https://zhaojunjie-code.github.io//post-images/1618652786818.PNG" alt="" loading="lazy"></figure>
-<h2 id="浮动float">浮动float</h2>
+<h2 id="浮动float-半脱离文档流">浮动float-半脱离文档流</h2>
+<h3 id="半脱离文档流浮动的元素父元素不知道这算是脱离文档流但是与他一起脱离文档流的其他元素能看到他左浮动时依然在他的后面">半脱离文档流：浮动的元素，父元素不知道，这算是脱离文档流，但是与他一起脱离文档流的其他元素，能看到他，左浮动时，依然在他的后面。</h3>
+<h3 id="常见的清除浮动和父元素跟随子元素撑开">常见的清除浮动和父元素跟随子元素撑开</h3>
+<h4 id="清除浮动clearleftboth用于与浮动元素同级的元素在布局时不会跑到其下面而是重新占一行">清除浮动clear:left,both;用于与浮动元素同级的元素，在布局时，不会跑到其下面，而是重新占一行。</h4>
+<h4 id="父元素终于认这个孩子了overflowhidden">父元素终于认这个孩子了：overflow:hidden;</h4>
 ]]></content>
     </entry>
     <entry>
@@ -478,250 +592,6 @@ Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组
         });
 &lt;\script&gt;       
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AJAX]]></title>
-        <id>https://zhaojunjie-code.github.io/post/ajax/</id>
-        <link href="https://zhaojunjie-code.github.io/post/ajax/">
-        </link>
-        <updated>2021-04-06T13:33:01.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="第一天">第一天</h1>
-<h2 id="xmlhttprequest对象-ajax的开始">* XMLHttpRequest对象 AJAX的开始</h2>
-<pre><code class="language-javaScript">var xmlhttp;
-xmlhttp = new XMLHttpRequest();
-</code></pre>
-<h2 id="向服务器发送请求">向服务器发送请求</h2>
-<pre><code class="language-javaScript">xmlhttp.open(method,url,async);
-xmlhttp.send(string);
-</code></pre>
-<p>method: 请求的类型 &quot;GET&quot; OR &quot;POST&quot;<br>
-url: 文件在服务器的位置<br>
-async：true（异步）false（同步）</p>
-<p>string: 仅用于POST请求</p>
-<h3 id="当使用get发送信息时发送的信息写在url里面-send">当使用GET发送信息时，发送的信息写在url里面 send()</h3>
-<h3 id="当使用post发送信息时发送的信息写在send写在这里">当使用POST发送信息时，发送的信息写在send(写在这里)</h3>
-<h3 id="setrequsetheaderheadervalue">setRequsetHeader(header，value)</h3>
-<p>添加HTTP头<br>
-header: 规定头的名称<br>
-value： 规定头的值</p>
-<h2 id="服务器响应">服务器响应</h2>
-<h4 id="responsetext-获得字符串形式的响应数据">responseText 获得字符串形式的响应数据</h4>
-<h4 id="responsexml-获得xml形式的响应数据">responseXML 获得XML形式的响应数据</h4>
-<p>通常不是XML，就使用Text</p>
-<pre><code class="language-javaScript">document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;
-</code></pre>
-<p>如果是XML,则</p>
-<pre><code class="language-javaScript">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;script&gt;
-function loadXMLDoc()
-{
-  var xmlhttp;
-  var txt,x,i;
-  if (window.XMLHttpRequest)
-  {
-    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-    xmlhttp=new XMLHttpRequest();
-  }
-  else
-  {
-    // IE6, IE5 浏览器执行代码
-    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-  }
-  xmlhttp.onreadystatechange=function()
-  {
-    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
-    {
-      xmlDoc=xmlhttp.responseXML;
-      txt=&quot;&quot;;
-      x=xmlDoc.getElementsByTagName(&quot;ARTIST&quot;);
-      for (i=0;i&lt;x.length;i++)
-      {
-        txt=txt + x[i].childNodes[0].nodeValue + &quot;&lt;br&gt;&quot;;
-      }
-      document.getElementById(&quot;myDiv&quot;).innerHTML=txt;
-    }
-  }
-  xmlhttp.open(&quot;GET&quot;,&quot;cd_catalog.xml&quot;,true);
-  xmlhttp.send();
-}
-&lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-
-&lt;h2&gt;我收藏的 CD :&lt;/h2&gt;
-&lt;div id=&quot;myDiv&quot;&gt;&lt;/div&gt;
-&lt;button type=&quot;button&quot; onclick=&quot;loadXMLDoc()&quot;&gt;获取我的 CD&lt;/button&gt;
- 
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="onreadystatechange-事件-通常被绑定一个服务器响应函数">onreadystatechange 事件 通常被绑定一个服务器响应函数</h2>
-<p>当open,send这些请求发送到服务器是，，服务器会返回响应<br>
-onreadystatechange事件类似与onclick事件<br>
-每当鼠标点击会触发onclick事件</p>
-<h4 id="每当readystate改变时onreadystatechage会被触发一次">每当readyState改变时，onreadystatechage会被触发一次</h4>
-<h3 id="readystate-存有xmlhttprequest的状态0-4之间变化">readyState  存有XMLHttpRequest的状态，0-4之间变化</h3>
-<p>0：请求未初始化<br>
-1：服务器连接已建立<br>
-2：请求已接收<br>
-3：请求处理中<br>
-4：请求已完成，且响应已就绪</p>
-<h3 id="status-存储状态">status 存储状态</h3>
-<p>200：&quot;OK&quot;<br>
-404: 未找到页面<br>
-在onreadystatechange事件中，当readyState等于4且状态为200，表示响应就绪</p>
-<pre><code class="language-javaScript">if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)     //当服务器响应成功
-    {
-        document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;   //前端要干的事
-    }
-</code></pre>
-<h3 id="回调函数">回调函数</h3>
-<pre><code class="language-javaScript">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;script&gt;
-var xmlhttp;
-function loadXMLDoc(url,cfunc)
-{
-if (window.XMLHttpRequest)
-  {// IE7+, Firefox, Chrome, Opera, Safari 代码
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// IE6, IE5 代码
-  xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-  }
-xmlhttp.onreadystatechange=cfunc;
-xmlhttp.open(&quot;GET&quot;,url,true);
-xmlhttp.send();
-}
-function myFunction()
-{
-	loadXMLDoc(&quot;/try/ajax/ajax_info.txt&quot;,function()             //调用上面的函数
-	{
-		if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
-		{
-			document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;
-		}
-	});
-}
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;div id=&quot;myDiv&quot;&gt;&lt;h2&gt;使用 AJAX 修改文本内容&lt;/h2&gt;&lt;/div&gt;
-&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;修改内容&lt;/button&gt;    //绑定自己调用的函数
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="与后台交互-documentgetelementbyidtxthintinnerhtmlxmlhttpresponsetext">与后台交互 document.getElementById(&quot;txtHint&quot;).innerHTML=xmlhttp.responseText;</h2>
-<pre><code class="language-javaScript">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;script&gt;
-function showCustomer(str)
-{
-  var xmlhttp;    
-  if (str==&quot;&quot;)                 //开始状态，或者没有值
-  {
-    document.getElementById(&quot;txtHint&quot;).innerHTML=&quot;&quot;;
-    return;               //直接结束
-  }
-  if (window.XMLHttpRequest)
-  {
-    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-    xmlhttp=new XMLHttpRequest();            //创建一个XMLHttpRequest对象
-  }
-  else
-  {
-    // IE6, IE5 浏览器执行代码
-    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-  }
-  xmlhttp.open(&quot;GET&quot;,&quot;/try/ajax/getcustomer.php?q=&quot;+str,true);   //通过GET方法向服务器请求（发送的信息就在url后面加上）这里是 &quot;...q=&quot; +str
-  xmlhttp.send();
-  xmlhttp.onreadystatechange=function()     //绑定服务器响应函数  ，根据readyState的变化，调用onreadystatechange
-  {
-    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)    //响应成功的标志
-    {
-      document.getElementById(&quot;txtHint&quot;).innerHTML=xmlhttp.responseText;    //从服务器得到数据
-    }
-  }
-}
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;form action=&quot;&quot;&gt; 
-&lt;select name=&quot;customers&quot; onchange=&quot;showCustomer(this.value)&quot; style=&quot;font-family:Verdana, Arial, Helvetica, sans-serif;&quot;&gt;   //下拉列表
-&lt;option value=&quot;APPLE&quot;&gt;Apple Computer, Inc.&lt;/option&gt;
-&lt;option value=&quot;BAIDU &quot;&gt;BAIDU, Inc&lt;/option&gt;
-&lt;option value=&quot;Canon&quot;&gt;Canon USA, Inc.&lt;/option&gt;
-&lt;option value=&quot;Google&quot;&gt;Google, Inc.&lt;/option&gt;
-&lt;option value=&quot;Nokia&quot;&gt;Nokia Corporation&lt;/option&gt;
-&lt;option value=&quot;SONY&quot;&gt;Sony Corporation of America&lt;/option&gt;
-&lt;/select&gt;
-&lt;/form&gt;
-&lt;br&gt;
-&lt;div id=&quot;txtHint&quot;&gt;客户信息将显示在这...&lt;/div&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JS实现完美的拖拽]]></title>
-        <id>https://zhaojunjie-code.github.io/post/js-shi-xian-wan-mei-de-tuo-zhuai/</id>
-        <link href="https://zhaojunjie-code.github.io/post/js-shi-xian-wan-mei-de-tuo-zhuai/">
-        </link>
-        <updated>2021-04-02T08:19:32.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="预备知识">预备知识</h1>
-<p>##event事件对象</p>
-<h3 id="与光标有关的属性-clientx">与光标有关的属性 clientX</h3>
-<p>返回当事件被触发时，鼠标的水平坐标(距离 px)</p>
-<h3 id="与光标有关的属性-clienty">与光标有关的属性 clientY</h3>
-<p>返回当事件被触发时，鼠标的垂直坐标(距离 px)</p>
-<h2 id="html元素对象">HTML元素对象</h2>
-<h3 id="offsetleft">offsetLeft</h3>
-<p>当前元素相对与最近定位的父元素的水平距离(px)</p>
-<h3 id="offsettop">offsetTop</h3>
-<p>当前元素相对与最近定位的父元素的垂直距离(px)</p>
-<h1 id="跟随鼠标">跟随鼠标</h1>
-<p>每当提到控制DOM跟随鼠标移动，我们头脑里会蹦出PageX,PageY 它们俩分别返回当前光标的水平坐标和垂直坐标。</p>
-<pre><code class="language-javaScript">var left = event.pageX;
-var top = event.pageY;
-box1.style.left = left + &quot;px&quot;;
-box1.style.top = top +&quot;px&quot;;
-</code></pre>
-<p>这很容易实现</p>
-<h2 id="当我们将上述操作应用到拖拽操作时">当我们将上述操作应用到拖拽操作时</h2>
-<p>我们会发现，点击一个元素的某一位置进行拖拽时，元素总会跳变到跟随鼠标移动的位置<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1617353505592.png" alt="" loading="lazy"><br>
-这导致用户体验感极差<br>
-如何解决这个问题呢？<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1617354112330.png" alt="" loading="lazy"><br>
-我们可以看到</p>
-<h3 id="clientx-offsetleft-水平跳变距离">clientX - offsetLeft = 水平跳变距离</h3>
-<h3 id="同理-clienty-offsettop-垂直跳变距离">同理 clientY - offsetTop = 垂直跳变距离</h3>
-<pre><code class="language-javaScript">box1.onmousedown = function (event) {
-               var ol = event.clientX - box1.offsetLeft;
-               var ot = event.clientY - box1.offsetTop;
-               document.onmousemove = function (event) {
-                   var X = event.pageX - ol;
-                   var Y = event.pageY - ot;
-                   box1.style.left = X + &quot;px&quot;;
-                   box1.style.top = Y + &quot;px&quot;;
-               }
-           }
-</code></pre>
-<p>我们不希望看到跳变，那么就减去跳变距离</p>
 ]]></content>
     </entry>
 </feed>

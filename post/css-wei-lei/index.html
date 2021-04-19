@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CSS-伪类 | 杰</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhaojunjie-code.github.io//favicon.ico?v=1618828992295">
+<link rel="stylesheet" href="https://zhaojunjie-code.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="伪类用于定义元素的特殊状态
+伪类语法
+selector:pseudo-class {
+    property:value;
+}
+
+悬停：a:hover{}当鼠标停在a链接上，a会出现的效果；同理，悬停在div上div:hover{},
+工..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhaojunjie-code.github.io/">
+        <img src="https://zhaojunjie-code.github.io//images/avatar.png?v=1618828992295" class="site-logo">
+        <h1 class="site-title">杰</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      前端探索
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhaojunjie-code.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CSS-伪类</h2>
+            <div class="post-date">2021-04-19</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="伪类用于定义元素的特殊状态">伪类用于定义元素的特殊状态</h1>
+<p>伪类语法</p>
+<pre><code class="language-js">selector:pseudo-class {
+    property:value;
+}
+</code></pre>
+<h2 id="悬停ahover当鼠标停在a链接上a会出现的效果同理悬停在div上divhover">悬停：a:hover{}当鼠标停在a链接上，a会出现的效果；同理，悬停在div上div:hover{},</h2>
+<h2 id="工具提示悬停鼠标停在div上显示p的效果">工具提示悬停：鼠标停在div上，显示p的效果</h2>
+<pre><code class="language-js">p {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+
+div:hover p {
+  display: block;
+}
+</code></pre>
+<h1 id="first-child伪类与指定的元素匹配并规定该元素是另一个元素的第一个子元素">:first-child伪类：与指定的元素匹配，并规定：该元素是另一个元素的第一个子元素</h1>
+<h1 id="注意处在-first-child-的前一个选择器是第一个子元素例如-ifirst-childi是第一个子元素p-ifirst-child在p中的第一个子元素i">注意：处在 :first-child 的前一个选择器，是第一个子元素；例如 i:first-child,i是第一个子元素；p i:first-child，在p中的第一个子元素i。</h1>
+<h1 id="p-first-child-i这种写法第一个子元素是p要修饰的内容是p里面的i">p :first-child i,这种写法，第一个子元素是p，要修饰的内容是p里面的i</h1>
+<p>三个例子</p>
+<ol>
+<li>匹配首个p元素</li>
+</ol>
+<pre><code class="language-js">p:first-child {
+    color: blue;
+}
+</code></pre>
+<ol start="2">
+<li>匹配所有p元素的首个i元素</li>
+</ol>
+<pre><code class="language-js">p i:first-child {
+    color:blue;
+}
+</code></pre>
+<p>3.匹配所有首个p元素中的所有i元素</p>
+<pre><code class="language-js">p :first-child i {
+    color:blue;
+}
+</code></pre>
+<h1 id="lang伪类允许您为不同的语言定义特殊的规则">:lang伪类：允许您为不同的语言定义特殊的规则。</h1>
+<pre><code class="language-js">q:lang(en) {
+  quotes: &quot;~&quot; &quot;~&quot;;
+}
+&lt;p&gt;Some text &lt;q lang=&quot;no&quot;&gt;A quote in a paragraph&lt;/q&gt; Some text.&lt;/p&gt;
+</code></pre>
+<p>效果：被q lang=&quot;no&quot;双标签包起来的元素：首尾加上了&quot;~&quot;号<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1618815815051.PNG" alt="" loading="lazy"></p>
+<h1 id="focus伪类为input标签渲染获取焦点时的效果">:focus伪类：为input标签，渲染获取焦点时的效果</h1>
+<pre><code class="language-js">input:focus{
+    background-color:yellow;
+}
+</code></pre>
+<p>效果：当鼠标点击input框时，input框背景颜色边黄</p>
+<h1 id="xbefore伪类-为所有x标签的内容之前是一个块添加样式-用content添加文本">X::before伪类: 为所有X标签的内容之前（是一个块）添加样式 用content:&quot;&quot;;添加文本，</h1>
+<pre><code class="language-js">p:before{
+    content:&quot;台词：！&quot;:
+}
+&lt;p&gt;你这个叛徒&lt;/p&gt;
+</code></pre>
+<p>效果：p标签渲染后的效果 ”台词：！你这个叛徒“</p>
+<h1 id="xfirst-letter伪类-首字母大写">X::first-letter伪类: 首字母大写</h1>
+<pre><code class="language-js">p:first-letter{
+    font-size:200%;
+}
+&lt;p&gt;hello&lt;/p&gt;
+</code></pre>
+<p>效果：Hello</p>
+<h1 id="selection伪类用户选择时的效果用户在网页上用鼠标选择一段文本进行复制通常文本的背景颜色会变蓝">::selection伪类：用户选择时的效果；用户在网页上用鼠标选择一段文本进行复制，通常文本的背景颜色会变蓝</h1>
+<pre><code class="language-js">::selection {
+    bakground-color:blue;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618816689269.PNG" alt="" loading="lazy"></figure>
+<h1 id="伪元素伪元素用于设置元素指定部分的样式">伪元素：伪元素用于设置元素指定部分的样式。</h1>
+<h1 id="注意双冒号">注意双冒号 ::</h1>
+<h2 id="first-letter-伪元素用于向文本的首字母添加特殊样式">::first-letter 伪元素用于向文本的首字母添加特殊样式。</h2>
+<h2 id="first-line-伪元素用于向文本的首行添加特殊样式">::first-line 伪元素用于向文本的首行添加特殊样式。</h2>
+<h2 id="伪元素和-css-类">伪元素和 CSS 类</h2>
+<pre><code class="language-js">.intro::first-letter {
+  color: #ff0000;
+  font-size: 200%;
+}
+</code></pre>
+<p>效果:为class=&quot;intro&quot;的类，首字母大写并设置颜色#ff0000</p>
+<h2 id="多个伪元素一个标签或一个类可以组合使用多个伪元素">多个伪元素：一个标签或一个类可以组合使用多个伪元素</h2>
+<h2 id="before伪元素">::before伪元素</h2>
+<p>content:;<br>
+可以添加文本: &quot;用引号括起来可以在一个标签或者一个类之前添加文本&quot;<br>
+可以添加图片:&quot;url(smiley.gif);</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/css-xuan-ze-qi/">
+                  <h3 class="post-title">
+                    CSS组合器
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
