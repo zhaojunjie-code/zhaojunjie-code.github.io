@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-19T16:45:14.431Z</updated>
+    <updated>2021-04-20T10:01:25.614Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,49 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[CSS3-边框]]></title>
+        <id>https://zhaojunjie-code.github.io/post/css3-bian-kuang/</id>
+        <link href="https://zhaojunjie-code.github.io/post/css3-bian-kuang/">
+        </link>
+        <updated>2021-04-20T07:59:10.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="设置边框圆角-border-radius">设置边框圆角： border-radius:;</h1>
+<p>赋值顺序：左上，右上，右下，左下；顺时针顺序<br>
+4个值：左上，右上，右下，左下；<br>
+3个值：左上，右上和左下，右下；<br>
+2个值：左上和右下，右上和左下；<br>
+1个值：四个角都。<br>
+border-top-left-radius<br>
+border-top-right-radius<br>
+border-bottom-right-radius<br>
+border-bottom-left-radius</p>
+<h1 id="以上这些赋值方式是最基础的为边框的各角设置半径">以上这些赋值方式，是最基础的为边框的各角设置半径。</h1>
+<p>具体原理是什么？<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1618908874817.png" alt="" loading="lazy"><br>
+按照这样的方法，我们可以画出一个圆<br>
+思路：设置宽高都相同，边框半径等于宽高的一半</p>
+<pre><code class="language-js">#rcorners1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background: red;  
+}
+</code></pre>
+<p>效果：<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1618909689791.PNG" alt="" loading="lazy"></p>
+<h1 id="设置椭圆角border-radius">设置椭圆角：border-radius: /  ;</h1>
+<p>讲到设置椭圆角，就不得不提到垂直半径和水平半径<br>
+理解了上面那幅图，下面就好理解了<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1618910229189.png" alt="" loading="lazy"><br>
+在刚才设置border-radius:;的基础上，可为一个变设置椭圆角比如  10px/20px;它代表把这个角看成椭圆，椭圆水平半径为10px，垂直半径20px。<br>
+使用椭圆角后，边框各角的样式就更丰富了，椭圆包含圆。</p>
+<h1 id="边框图像">边框图像</h1>
+<p>border-image:;<br>
+border-image-source:url();   图像源<br>
+border-image-slice:;             怎样切割图像，类似margin<br>
+border-image-repeat:stretch,round,repeat;          图像是拉伸，平铺还是重复</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS-特异性]]></title>
         <id>https://zhaojunjie-code.github.io/post/css-te-yi-xing/</id>
@@ -348,27 +391,6 @@ div:hover p {
 <h1 id="通用兄弟选择器-~">通用兄弟选择器: ~</h1>
 <p>div~p{}<br>
 选中与div同级的p</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSS定位机制]]></title>
-        <id>https://zhaojunjie-code.github.io/post/css-ding-wei-ji-zhi/</id>
-        <link href="https://zhaojunjie-code.github.io/post/css-ding-wei-ji-zhi/">
-        </link>
-        <updated>2021-04-17T09:16:31.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="css有三种定位机制-普通流浮动绝对定位">CSS有三种定位机制 普通流，浮动，绝对定位</h1>
-<h2 id="普通流由html位置决定块级框一个接一个排列框之间的垂直距离是由框的垂直外边计算出来的行内框在一行中水平布置水平内边距-边框和外边距调整它们的间距垂直边距边框距不会改变其高度">普通流:由HTML位置决定，块级框一个接一个排列，框之间的垂直距离是由框的垂直外边计算出来的；行内框在一行中水平布置，水平内边距、边框和外边距调整它们的间距，垂直边距，边框距不会改变其高度。</h2>
-<h2 id="定位-相对定位-relative">定位-相对定位 relative</h2>
-<h3 id="positonrelative其元素并不会脱离文档流而是还出现在相对定位之前的位置但是可以通过topleftrightbottom设置其偏移距离注意它一直在文档流中仍然占据原来的空间-移动后会覆盖其他的框">positon:relative;其元素并不会脱离文档流，而是还出现在相对定位之前的位置，但是可以通过top,left,right,bottom设置其偏移距离，注意：它一直在文档流中，仍然占据原来的空间。移动后会覆盖其他的框</h3>
-<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618652538672.PNG" alt="" loading="lazy"></figure>
-<h3 id="positonabsolute其元素会从文档流中删除完全脱离文档流并相对于一个已经定位的包含块定位如果没有包含块则相对于初始块定位元素原先在文档流中占据的空间会被浏览器关闭他之后的元素可能会上来补他的位置-元素定位后生成一个块级框而不论原来它在正常流中生成何种类型的框">positon:absolute;其元素会从文档流中删除(完全脱离文档流)，并相对于一个已经定位的包含块定位(如果没有包含块，则相对于初始块定位)，元素原先在文档流中占据的空间会被浏览器关闭，他之后的元素可能会上来补他的位置。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</h3>
-<figure data-type="image" tabindex="2"><img src="https://zhaojunjie-code.github.io//post-images/1618652786818.PNG" alt="" loading="lazy"></figure>
-<h2 id="补充一点positionfixed粘性布局也会脱离文档流">补充一点：position:fixed;粘性布局也会脱离文档流！</h2>
-<h2 id="浮动float-半脱离文档流">浮动float-半脱离文档流</h2>
-<h3 id="半脱离文档流浮动的元素父元素不知道这算是脱离文档流但是与他一起脱离文档流的其他元素能看到他左浮动时依然在他的后面">半脱离文档流：浮动的元素，父元素不知道，这算是脱离文档流，但是与他一起脱离文档流的其他元素，能看到他，左浮动时，依然在他的后面。</h3>
-<h3 id="常见的清除浮动和父元素跟随子元素撑开">常见的清除浮动和父元素跟随子元素撑开</h3>
-<h4 id="清除浮动clearleftboth用于与浮动元素同级的元素在布局时不会跑到其下面而是重新占一行">清除浮动clear:left,both;用于与浮动元素同级的元素，在布局时，不会跑到其下面，而是重新占一行。</h4>
-<h4 id="父元素终于认这个孩子了overflowhidden">父元素终于认这个孩子了：overflow:hidden;</h4>
 ]]></content>
     </entry>
 </feed>
