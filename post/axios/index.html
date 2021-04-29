@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>axios | 杰</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhaojunjie-code.github.io//favicon.ico?v=1619706438668">
+<link rel="stylesheet" href="https://zhaojunjie-code.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="get请求和post请求
+基本操作：为给定ID=1的user创建get请求,在控制台输出
+axios({
+    url:&quot;http://xxxxxxxxxxxxxxxxxxxxxxx&quot;,  //接口
+    param..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhaojunjie-code.github.io/">
+        <img src="https://zhaojunjie-code.github.io//images/avatar.png?v=1619706438668" class="site-logo">
+        <h1 class="site-title">杰</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      前端探索
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhaojunjie-code.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">axios</h2>
+            <div class="post-date">2021-04-29</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="get请求和post请求">get请求和post请求</h1>
+<h2 id="基本操作为给定id1的user创建get请求在控制台输出">基本操作：为给定ID=1的user创建get请求,在控制台输出</h2>
+<pre><code>axios({
+    url:&quot;http://xxxxxxxxxxxxxxxxxxxxxxx&quot;,  //接口
+    params:{
+        id:'1',                                                
+    },
+    method:&quot;get&quot;,
+}).then(res=&gt;{
+    console.log(res);
+});
+</code></pre>
+<h2 id="axiosget-为id1的user创建请求">axios.get 为ID=1的user创建请求</h2>
+<pre><code>axios.get(&quot;http://xxxxxxxxxxxxxxx&quot;,{params:{ID:1}}).then(res=&gt;{
+    console.log(res);                      //操作
+}).catch(error=&gt;{
+    console.log(error);                   //获取异常
+})
+</code></pre>
+<h3 id="parmas是给url字符串的后面添加id1这样挺万能的但不够安全">parmas是给url字符串的后面添加ID=1,这样挺万能的但不够安全</h3>
+<h2 id="axiospost-为id1的user创建请求">axios.post 为ID=1的user创建请求</h2>
+<pre><code>axios.post(&quot;http://xxxxxxxxxxxxxxxxxxxx&quot;,{data:{
+    name:1;
+}}).then(res=&gt;{
+    console.log(res);
+}).catch(error=&gt;{
+    console.log(error);
+})
+</code></pre>
+<h3 id="axios使用post发送数据时默认是textplainjson对象而服务器接受的是字符流http默认提交数据的形式applicationx-www-form-urlencoded我们就要把content-type改为applicationx-www-form-urlencoded">axios使用post发送数据时,默认是text/plain，json对象，而服务器接受的是字符流，HTTP默认提交数据的形式application/x-www-form-urlencoded,我们就要把Content-Type改为application/x-www-form-urlencoded</h3>
+<h3 id="解决方法建议使用qs-qsstringify是将对象-序列化成url的形式键值对的形式以进行拼接">解决方法建议:使用qs qs.stringify()是将对象 序列化成URL的形式，(键值对的形式)以&amp;进行拼接</h3>
+<pre><code>npm install qs
+import qs from 'qs'
+</code></pre>
+<pre><code>let postdata = {
+    &quot;key1&quot;:&quot;values1&quot;,
+    &quot;ID&quot;:&quot;1&quot;,
+    &quot;name&quot;:&quot;张三&quot;,
+};                                    //设置好你要以什么对象的请求
+axios.post(&quot;http://xxxxxxxxxxxxxxxxxxxx&quot;,{data:qs.stringify(postdata)}).then        //使用qs.stringify()转换  (res=&gt;{
+    console.log(res);
+}).catch(error=&gt;{
+    console.log(error);
+})
+</code></pre>
+<h1 id="配置默认值">配置默认值</h1>
+<pre><code>axios.default.baseURL = 'http://xxxxxxx';         //配置接口公共部分的数据
+axios.default.headers.common['token'] = token;    //设置请求头
+axios.default.headers.post['Content-Type'] = 'application/x-www-form-urlencoded''                              //设置post请求的格式
+axios.default.timeout = 5000,                          //设置事件5秒</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/css3-bian-kuang/">
+                  <h3 class="post-title">
+                    CSS3-边框
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

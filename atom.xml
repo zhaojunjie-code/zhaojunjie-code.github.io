@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-04-20T10:01:25.614Z</updated>
+    <updated>2021-04-29T14:27:22.968Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,64 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[axios]]></title>
+        <id>https://zhaojunjie-code.github.io/post/axios/</id>
+        <link href="https://zhaojunjie-code.github.io/post/axios/">
+        </link>
+        <updated>2021-04-29T11:39:50.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="get请求和post请求">get请求和post请求</h1>
+<h2 id="基本操作为给定id1的user创建get请求在控制台输出">基本操作：为给定ID=1的user创建get请求,在控制台输出</h2>
+<pre><code>axios({
+    url:&quot;http://xxxxxxxxxxxxxxxxxxxxxxx&quot;,  //接口
+    params:{
+        id:'1',                                                
+    },
+    method:&quot;get&quot;,
+}).then(res=&gt;{
+    console.log(res);
+});
+</code></pre>
+<h2 id="axiosget-为id1的user创建请求">axios.get 为ID=1的user创建请求</h2>
+<pre><code>axios.get(&quot;http://xxxxxxxxxxxxxxx&quot;,{params:{ID:1}}).then(res=&gt;{
+    console.log(res);                      //操作
+}).catch(error=&gt;{
+    console.log(error);                   //获取异常
+})
+</code></pre>
+<h3 id="parmas是给url字符串的后面添加id1这样挺万能的但不够安全">parmas是给url字符串的后面添加ID=1,这样挺万能的但不够安全</h3>
+<h2 id="axiospost-为id1的user创建请求">axios.post 为ID=1的user创建请求</h2>
+<pre><code>axios.post(&quot;http://xxxxxxxxxxxxxxxxxxxx&quot;,{data:{
+    name:1;
+}}).then(res=&gt;{
+    console.log(res);
+}).catch(error=&gt;{
+    console.log(error);
+})
+</code></pre>
+<h3 id="axios使用post发送数据时默认是textplainjson对象而服务器接受的是字符流http默认提交数据的形式applicationx-www-form-urlencoded我们就要把content-type改为applicationx-www-form-urlencoded">axios使用post发送数据时,默认是text/plain，json对象，而服务器接受的是字符流，HTTP默认提交数据的形式application/x-www-form-urlencoded,我们就要把Content-Type改为application/x-www-form-urlencoded</h3>
+<h3 id="解决方法建议使用qs-qsstringify是将对象-序列化成url的形式键值对的形式以进行拼接">解决方法建议:使用qs qs.stringify()是将对象 序列化成URL的形式，(键值对的形式)以&amp;进行拼接</h3>
+<pre><code>npm install qs
+import qs from 'qs'
+</code></pre>
+<pre><code>let postdata = {
+    &quot;key1&quot;:&quot;values1&quot;,
+    &quot;ID&quot;:&quot;1&quot;,
+    &quot;name&quot;:&quot;张三&quot;,
+};                                    //设置好你要以什么对象的请求
+axios.post(&quot;http://xxxxxxxxxxxxxxxxxxxx&quot;,{data:qs.stringify(postdata)}).then        //使用qs.stringify()转换  (res=&gt;{
+    console.log(res);
+}).catch(error=&gt;{
+    console.log(error);
+})
+</code></pre>
+<h1 id="配置默认值">配置默认值</h1>
+<pre><code>axios.default.baseURL = 'http://xxxxxxx';         //配置接口公共部分的数据
+axios.default.headers.common['token'] = token;    //设置请求头
+axios.default.headers.post['Content-Type'] = 'application/x-www-form-urlencoded''                              //设置post请求的格式
+axios.default.timeout = 5000,                          //设置事件5秒</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS3-边框]]></title>
         <id>https://zhaojunjie-code.github.io/post/css3-bian-kuang/</id>
@@ -367,30 +425,6 @@ div:hover p {
 <p>content:;<br>
 可以添加文本: &quot;用引号括起来可以在一个标签或者一个类之前添加文本&quot;<br>
 可以添加图片:&quot;url(smiley.gif);</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSS组合器]]></title>
-        <id>https://zhaojunjie-code.github.io/post/css-xuan-ze-qi/</id>
-        <link href="https://zhaojunjie-code.github.io/post/css-xuan-ze-qi/">
-        </link>
-        <updated>2021-04-17T10:24:13.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="后代选择器-空格">后代选择器: 空格</h1>
-<p>很简单，例如div p {？} ：这说明div下的所有p后代都需要有？这个效果</p>
-<h1 id="子选择器">子选择器: &gt;</h1>
-<p>div&gt;p{} 说明那些唯一爸爸是div的p才拥有效果，不能是爷爷，曾爷爷</p>
-<h1 id="相邻兄弟选择器">相邻兄弟选择器: +</h1>
-<p>div +p {}</p>
-<pre><code class="language-js">&lt;div&gt;
-  &lt;p&gt;div 中的段落 1。&lt;/p&gt;
-  &lt;p&gt;div 中的段落 2。&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;段落 3。不在 div 中。&lt;/p&gt;
-</code></pre>
-<p>p与div同级且相邻且p在div 后面出现</p>
-<h1 id="通用兄弟选择器-~">通用兄弟选择器: ~</h1>
-<p>div~p{}<br>
-选中与div同级的p</p>
 ]]></content>
     </entry>
 </feed>
