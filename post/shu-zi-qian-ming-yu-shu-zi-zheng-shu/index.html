@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Vue组件 | 杰</title>
+<title>数字签名与数字证书 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,12 +18,22 @@
 
 
 
-    <meta name="description" content="组件是一个拥有预定义选项的一个Vue实例
-定义语句
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)
-&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;ap..." />
+    <meta name="description" content="数字签名
+
+
+数字签名的作用  ：
+
+验证消息确实由发送方发出
+确实没有被他人篡改
+发送方不能抵赖
+主体采用公开密钥加密算法（当然还有报文摘要算法），相对于对称加密算法更加安全
+
+
+
+数字签名过程：
+签名过程
+
+发送方A采用报文摘要算法（通..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -95,46 +105,64 @@ Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Vue组件</h2>
-            <div class="post-date">2021-04-07</div>
+            <h2 class="post-title">数字签名与数字证书</h2>
+            <div class="post-date">2022-03-20</div>
             
             <div class="post-content" v-pre>
-              <h1 id="组件是一个拥有预定义选项的一个vue实例">组件是一个拥有预定义选项的一个Vue实例</h1>
-<p>定义语句<br>
-Vue.component(&quot;组件的名字(字符串),以对象的形式描述一个组件)</p>
-<pre><code class="language-javaScript">&lt;html&gt;
-&lt;body&gt;
-    &lt;div id=&quot;app9&quot;&gt;
-        &lt;button-counter&gt;&lt;/button-counter&gt;          &lt;!--组件标签--&gt;
-    &lt;/div&gt;
-&lt;\body&gt;
-&lt;\html&gt;
-&lt;script&gt;
-        Vue.component('button-counter', {             //Vue组件
-            data: function () {   //on:click响应函数
-                return {
-                    count: 0     //初始化默认
-                }
-            },
-            template: &quot;&lt;button v-on:click='count++'&gt;你点击了{{count}}次&lt;/button&gt;&quot;    //模板,使组件标签拥有模板的作用，我们看到模板是一个button标签，里面自带Vue的v-on绑定函数，让count++，函数在上面的DATA域
-        })
-        var app9 = new Vue({              //创建Vue对象
-            el: &quot;#app9&quot;,                          //元素截获
-            data: {                                     //数据对象
-
-            }
-        });
-&lt;\script&gt;       
-</code></pre>
+              <h1 id="数字签名">数字签名</h1>
+<ul>
+<li>
+<h2 id="数字签名的作用">数字签名的作用  ：</h2>
+<ol>
+<li>验证消息确实由发送方发出</li>
+<li>确实没有被他人篡改</li>
+<li>发送方不能抵赖</li>
+<li>主体采用公开密钥加密算法（当然还有报文摘要算法），相对于对称加密算法更加安全</li>
+</ol>
+</li>
+<li>
+<h2 id="数字签名过程">数字签名过程：</h2>
+<h3 id="签名过程">签名过程</h3>
+<ol>
+<li><strong>发送方A</strong>采用<strong>报文摘要算法（通常是MD5、SHA-1)</strong> 对信息加密；产生一个加密的 <strong>报文摘要</strong> 。</li>
+<li><strong>发送方A</strong>对  <strong>报文摘要</strong>再使用<strong>A的私钥</strong>对其进行加密、最后将其和<strong>消息明文</strong>一并发送给<strong>接收方B</strong></li>
+</ol>
+<h3 id="验证签名过程">验证签名过程</h3>
+<ol>
+<li><strong>接收方B</strong>将收到的<strong>报文摘要</strong>使用<strong>A的公钥</strong>进行解密；</li>
+<li>同时将<strong>消息明文</strong>采用和<strong>发送方A</strong>同样的<strong>报文摘要算法</strong>，再次摘要；</li>
+<li>最后将两份摘要进行比对，如果完全一致说明<strong>确实由A发出没有做任何修改</strong>。<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1647742704613.webp" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ul>
+<h1 id="数字证书">数字证书</h1>
+<ul>
+<li>
+<h2 id="认证机构ca">认证机构CA：</h2>
+<ol>
+<li>发送方将自己的公钥交给CA注册</li>
+<li>接收方通过CA拿到<strong>数字证书</strong>内含发送方的公钥，确认发送方公钥的合法性</li>
+</ol>
+</li>
+<li>
+<h2 id="接收方确认发送方的过程">接收方确认发送方的过程</h2>
+<ol>
+<li>发送方将公钥交给CA注册，CA生成一个证书</li>
+<li>接收方向CA发出请求，CA将发送方的证书用自己的私钥加密后，发给接收方</li>
+<li>接收方用CA的公钥解密，拿到证书，包含发送方的公钥，确定了合法性</li>
+</ol>
+</li>
+</ul>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/ajax/">
+                <a href="https://zhaojunjie-code.github.io/post/axios/">
                   <h3 class="post-title">
-                    AJAX
+                    axios
                   </h3>
                 </a>
               </div>

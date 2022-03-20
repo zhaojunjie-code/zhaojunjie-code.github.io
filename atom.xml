@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2022-03-20T01:40:23.998Z</updated>
+    <updated>2022-03-20T03:03:02.114Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
@@ -10,6 +10,59 @@
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, 杰</rights>
+    <entry>
+        <title type="html"><![CDATA[数字签名与数字证书]]></title>
+        <id>https://zhaojunjie-code.github.io/post/shu-zi-qian-ming-yu-shu-zi-zheng-shu/</id>
+        <link href="https://zhaojunjie-code.github.io/post/shu-zi-qian-ming-yu-shu-zi-zheng-shu/">
+        </link>
+        <updated>2022-03-20T01:41:59.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="数字签名">数字签名</h1>
+<ul>
+<li>
+<h2 id="数字签名的作用">数字签名的作用  ：</h2>
+<ol>
+<li>验证消息确实由发送方发出</li>
+<li>确实没有被他人篡改</li>
+<li>发送方不能抵赖</li>
+<li>主体采用公开密钥加密算法（当然还有报文摘要算法），相对于对称加密算法更加安全</li>
+</ol>
+</li>
+<li>
+<h2 id="数字签名过程">数字签名过程：</h2>
+<h3 id="签名过程">签名过程</h3>
+<ol>
+<li><strong>发送方A</strong>采用<strong>报文摘要算法（通常是MD5、SHA-1)</strong> 对信息加密；产生一个加密的 <strong>报文摘要</strong> 。</li>
+<li><strong>发送方A</strong>对  <strong>报文摘要</strong>再使用<strong>A的私钥</strong>对其进行加密、最后将其和<strong>消息明文</strong>一并发送给<strong>接收方B</strong></li>
+</ol>
+<h3 id="验证签名过程">验证签名过程</h3>
+<ol>
+<li><strong>接收方B</strong>将收到的<strong>报文摘要</strong>使用<strong>A的公钥</strong>进行解密；</li>
+<li>同时将<strong>消息明文</strong>采用和<strong>发送方A</strong>同样的<strong>报文摘要算法</strong>，再次摘要；</li>
+<li>最后将两份摘要进行比对，如果完全一致说明<strong>确实由A发出没有做任何修改</strong>。<br>
+<img src="https://zhaojunjie-code.github.io//post-images/1647742704613.webp" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ul>
+<h1 id="数字证书">数字证书</h1>
+<ul>
+<li>
+<h2 id="认证机构ca">认证机构CA：</h2>
+<ol>
+<li>发送方将自己的公钥交给CA注册</li>
+<li>接收方通过CA拿到<strong>数字证书</strong>内含发送方的公钥，确认发送方公钥的合法性</li>
+</ol>
+</li>
+<li>
+<h2 id="接收方确认发送方的过程">接收方确认发送方的过程</h2>
+<ol>
+<li>发送方将公钥交给CA注册，CA生成一个证书</li>
+<li>接收方向CA发出请求，CA将发送方的证书用自己的私钥加密后，发给接收方</li>
+<li>接收方用CA的公钥解密，拿到证书，包含发送方的公钥，确定了合法性</li>
+</ol>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[axios]]></title>
         <id>https://zhaojunjie-code.github.io/post/axios/</id>
@@ -326,105 +379,6 @@ display: block;
         <content type="html"><![CDATA[<h1 id="opacity用于指定元素的不透明度00-10值越小越透明0表示完全透明1表示不透明">opacity用于指定元素的不透明度：0.0-1.0值越小，越透明.0表示完全透明，1表示不透明</h1>
 <h2 id="可以应用在轮播图的切换效果中">可以应用在轮播图的切换效果中。</h2>
 <h3 id="图片叠在一起设置计时器使上面一张图片的不透明度从1渐变到0下面的图片就显示出来了">图片叠在一起，设置计时器，使上面一张图片的不透明度从1渐变到0，下面的图片就显示出来了</h3>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSS-伪类]]></title>
-        <id>https://zhaojunjie-code.github.io/post/css-wei-lei/</id>
-        <link href="https://zhaojunjie-code.github.io/post/css-wei-lei/">
-        </link>
-        <updated>2021-04-19T06:27:46.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="伪类用于定义元素的特殊状态">伪类用于定义元素的特殊状态</h1>
-<p>伪类语法</p>
-<pre><code class="language-js">selector:pseudo-class {
-    property:value;
-}
-</code></pre>
-<h2 id="悬停ahover当鼠标停在a链接上a会出现的效果同理悬停在div上divhover">悬停：a:hover{}当鼠标停在a链接上，a会出现的效果；同理，悬停在div上div:hover{},</h2>
-<h2 id="工具提示悬停鼠标停在div上显示p的效果">工具提示悬停：鼠标停在div上，显示p的效果</h2>
-<pre><code class="language-js">p {
-  display: none;
-  background-color: yellow;
-  padding: 20px;
-}
-
-div:hover p {
-  display: block;
-}
-</code></pre>
-<h1 id="first-child伪类与指定的元素匹配并规定该元素是另一个元素的第一个子元素">:first-child伪类：与指定的元素匹配，并规定：该元素是另一个元素的第一个子元素</h1>
-<h1 id="注意处在-first-child-的前一个选择器是第一个子元素例如-ifirst-childi是第一个子元素p-ifirst-child在p中的第一个子元素i">注意：处在 :first-child 的前一个选择器，是第一个子元素；例如 i:first-child,i是第一个子元素；p i:first-child，在p中的第一个子元素i。</h1>
-<h1 id="p-first-child-i这种写法第一个子元素是p要修饰的内容是p里面的i">p :first-child i,这种写法，第一个子元素是p，要修饰的内容是p里面的i</h1>
-<p>三个例子</p>
-<ol>
-<li>匹配首个p元素</li>
-</ol>
-<pre><code class="language-js">p:first-child {
-    color: blue;
-}
-</code></pre>
-<ol start="2">
-<li>匹配所有p元素的首个i元素</li>
-</ol>
-<pre><code class="language-js">p i:first-child {
-    color:blue;
-}
-</code></pre>
-<p>3.匹配所有首个p元素中的所有i元素</p>
-<pre><code class="language-js">p :first-child i {
-    color:blue;
-}
-</code></pre>
-<h1 id="lang伪类允许您为不同的语言定义特殊的规则">:lang伪类：允许您为不同的语言定义特殊的规则。</h1>
-<pre><code class="language-js">q:lang(en) {
-  quotes: &quot;~&quot; &quot;~&quot;;
-}
-&lt;p&gt;Some text &lt;q lang=&quot;no&quot;&gt;A quote in a paragraph&lt;/q&gt; Some text.&lt;/p&gt;
-</code></pre>
-<p>效果：被q lang=&quot;no&quot;双标签包起来的元素：首尾加上了&quot;~&quot;号<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1618815815051.PNG" alt="" loading="lazy"></p>
-<h1 id="focus伪类为input标签渲染获取焦点时的效果">:focus伪类：为input标签，渲染获取焦点时的效果</h1>
-<pre><code class="language-js">input:focus{
-    background-color:yellow;
-}
-</code></pre>
-<p>效果：当鼠标点击input框时，input框背景颜色边黄</p>
-<h1 id="xbefore伪类-为所有x标签的内容之前是一个块添加样式-用content添加文本">X::before伪类: 为所有X标签的内容之前（是一个块）添加样式 用content:&quot;&quot;;添加文本，</h1>
-<pre><code class="language-js">p:before{
-    content:&quot;台词：！&quot;:
-}
-&lt;p&gt;你这个叛徒&lt;/p&gt;
-</code></pre>
-<p>效果：p标签渲染后的效果 ”台词：！你这个叛徒“</p>
-<h1 id="xfirst-letter伪类-首字母大写">X::first-letter伪类: 首字母大写</h1>
-<pre><code class="language-js">p:first-letter{
-    font-size:200%;
-}
-&lt;p&gt;hello&lt;/p&gt;
-</code></pre>
-<p>效果：Hello</p>
-<h1 id="selection伪类用户选择时的效果用户在网页上用鼠标选择一段文本进行复制通常文本的背景颜色会变蓝">::selection伪类：用户选择时的效果；用户在网页上用鼠标选择一段文本进行复制，通常文本的背景颜色会变蓝</h1>
-<pre><code class="language-js">::selection {
-    bakground-color:blue;
-}
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://zhaojunjie-code.github.io//post-images/1618816689269.PNG" alt="" loading="lazy"></figure>
-<h1 id="伪元素伪元素用于设置元素指定部分的样式">伪元素：伪元素用于设置元素指定部分的样式。</h1>
-<h1 id="注意双冒号">注意双冒号 ::</h1>
-<h2 id="first-letter-伪元素用于向文本的首字母添加特殊样式">::first-letter 伪元素用于向文本的首字母添加特殊样式。</h2>
-<h2 id="first-line-伪元素用于向文本的首行添加特殊样式">::first-line 伪元素用于向文本的首行添加特殊样式。</h2>
-<h2 id="伪元素和-css-类">伪元素和 CSS 类</h2>
-<pre><code class="language-js">.intro::first-letter {
-  color: #ff0000;
-  font-size: 200%;
-}
-</code></pre>
-<p>效果:为class=&quot;intro&quot;的类，首字母大写并设置颜色#ff0000</p>
-<h2 id="多个伪元素一个标签或一个类可以组合使用多个伪元素">多个伪元素：一个标签或一个类可以组合使用多个伪元素</h2>
-<h2 id="before伪元素">::before伪元素</h2>
-<p>content:;<br>
-可以添加文本: &quot;用引号括起来可以在一个标签或者一个类之前添加文本&quot;<br>
-可以添加图片:&quot;url(smiley.gif);</p>
 ]]></content>
     </entry>
 </feed>
