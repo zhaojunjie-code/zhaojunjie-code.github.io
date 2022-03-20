@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CSS布局 | 杰</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhaojunjie-code.github.io//favicon.ico?v=1647745896450">
+<link rel="stylesheet" href="https://zhaojunjie-code.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="display:inline-block; 综合了inline和block的神奇效果
+inline 使一个元素成为行内元素，行内元素可以设置内外边距，边框厚度；但不能设置宽高，内容只能靠内容撑开；并且不独占一行
+block 使一个元素成为块..." />
+    <meta name="keywords" content="前端" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhaojunjie-code.github.io/">
+        <img src="https://zhaojunjie-code.github.io//images/avatar.png?v=1647745896450" class="site-logo">
+        <h1 class="site-title">杰</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      前端探索
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhaojunjie-code.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CSS布局</h2>
+            <div class="post-date">2021-04-17</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="displayinline-block-综合了inline和block的神奇效果">display:inline-block; 综合了inline和block的神奇效果</h1>
+<h2 id="inline-使一个元素成为行内元素行内元素可以设置内外边距边框厚度但不能设置宽高内容只能靠内容撑开并且不独占一行">inline 使一个元素成为行内元素，行内元素可以设置内外边距，边框厚度；但不能设置宽高，内容只能靠内容撑开；并且不独占一行</h2>
+<h2 id="block-使一个元素成为块级元素块级元素可以设置内外边距边框厚度可以设置宽高并且独占一行">block 使一个元素成为块级元素，块级元素可以设置内外边距，边框厚度；可以设置宽高；并且独占一行</h2>
+<h2 id="inline-block-使一个元素综合行内和块级元素的效果可以设置内外边距边框厚度可以设置宽高并且不独占一行可以使用br换行">inline-block 使一个元素综合行内和块级元素的效果；可以设置内外边距，边框厚度；可以设置宽高；并且不独占一行可以使用<br>换行</h2>
+<h1 id="水平对齐">水平对齐</h1>
+<h2 id="宽度设置的条件下divmagrinauto">宽度设置的条件下div：magrin:auto;</h2>
+<h2 id="图片的水平对齐">图片的水平对齐:</h2>
+<pre><code class="language-js">img {
+    display:block;    //使其成为块级元素
+    margin-left:auto;
+    margin-right:auto;
+}
+</code></pre>
+<h1 id="垂直对齐">垂直对齐</h1>
+<h2 id="最简单的方法padding加内边距前提是这个div没有高度">最简单的方法：padding加内边距(前提是：这个div没有高度)</h2>
+<h2 id="另一种方法line-height等于height设置行高前提单行文本如果多行则每一行都有height的行间距可能会溢出">另一种方法:line-height等于height，设置行高(前提：单行文本，如果多行，则每一行都有height的行间距，可能会溢出)</h2>
+<p>！！！ 解决办法:将多行文本用一个标签标起来，<br>
+重新设置行高为正常行高;<br>
+display:inline-block使其具有行内元素的不占据一行的效果，和block不换行的效果;<br>
+最后设置vertical-align:middle;垂直边距为中间！！！</p>
+<h1 id="水平垂直对齐">水平垂直对齐</h1>
+<h2 id="绝对定位transformcss3">绝对定位+transform(css3)</h2>
+<pre><code class="language-js">position:absolute;
+left:50%;                                  //水平居中
+top:50%;                                 //垂直居中                  //以上对于一个没有宽高的点有用，但是这个元素有宽高，这个居中方法只是是这个元素的左上角居中了
+transform:translate(-50%,-50%)                              //使这个元素在自己的宽度基础上x轴向左移动自己的一半，y轴同理
+</code></pre>
+<h2 id="弹性布局以后再补充">弹性布局以后再补充</h2>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://zhaojunjie-code.github.io/tag/C5UkKgq-V/" class="tag">
+                    前端
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhaojunjie-code.github.io/post/web-qian-duan-fang-xiang/">
+                  <h3 class="post-title">
+                    Web前端方向
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

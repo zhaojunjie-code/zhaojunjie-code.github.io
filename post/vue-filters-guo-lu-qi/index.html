@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>CSS3-边框 | 杰</title>
+<title>Vue filters过滤器 | 杰</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,13 +18,11 @@
 
 
 
-    <meta name="description" content="设置边框圆角： border-radius:;
-赋值顺序：左上，右上，右下，左下；顺时针顺序
-4个值：左上，右上，右下，左下；
-3个值：左上，右上和左下，右下；
-2个值：左上和右下，右上和左下；
-1个值：四个角都。
-border-top-l..." />
+    <meta name="description" content="filters:{} :对文本进行过滤
+用法：管道符号&quot;|&quot;
+例如：
+{{message|filter1}} :说明filter1这个函数写入filters:{}中，这个函数接收一个message参数，对其进行过滤。
+串..." />
     <meta name="keywords" content="前端" />
   </head>
   <body>
@@ -96,45 +94,17 @@ border-top-l..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">CSS3-边框</h2>
-            <div class="post-date">2021-04-20</div>
+            <h2 class="post-title">Vue filters过滤器</h2>
+            <div class="post-date">2021-04-14</div>
             
             <div class="post-content" v-pre>
-              <h1 id="设置边框圆角-border-radius">设置边框圆角： border-radius:;</h1>
-<p>赋值顺序：左上，右上，右下，左下；顺时针顺序<br>
-4个值：左上，右上，右下，左下；<br>
-3个值：左上，右上和左下，右下；<br>
-2个值：左上和右下，右上和左下；<br>
-1个值：四个角都。<br>
-border-top-left-radius<br>
-border-top-right-radius<br>
-border-bottom-right-radius<br>
-border-bottom-left-radius</p>
-<h1 id="以上这些赋值方式是最基础的为边框的各角设置半径">以上这些赋值方式，是最基础的为边框的各角设置半径。</h1>
-<p>具体原理是什么？<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1618908874817.png" alt="" loading="lazy"><br>
-按照这样的方法，我们可以画出一个圆<br>
-思路：设置宽高都相同，边框半径等于宽高的一半</p>
-<pre><code class="language-js">#rcorners1 {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  background: red;  
-}
-</code></pre>
-<p>效果：<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1618909689791.PNG" alt="" loading="lazy"></p>
-<h1 id="设置椭圆角border-radius">设置椭圆角：border-radius: /  ;</h1>
-<p>讲到设置椭圆角，就不得不提到垂直半径和水平半径<br>
-理解了上面那幅图，下面就好理解了<br>
-<img src="https://zhaojunjie-code.github.io//post-images/1618910229189.png" alt="" loading="lazy"><br>
-在刚才设置border-radius:;的基础上，可为一个变设置椭圆角比如  10px/20px;它代表把这个角看成椭圆，椭圆水平半径为10px，垂直半径20px。<br>
-使用椭圆角后，边框各角的样式就更丰富了，椭圆包含圆。</p>
-<h1 id="边框图像">边框图像</h1>
-<p>border-image:;<br>
-border-image-source:url();   图像源<br>
-border-image-slice:;             怎样切割图像，类似margin<br>
-border-image-repeat:stretch,round,repeat;          图像是拉伸，平铺还是重复</p>
+              <h1 id="filters-对文本进行过滤">filters:{} :对文本进行过滤</h1>
+<p>用法：管道符号&quot;|&quot;<br>
+例如：</p>
+<h2 id="messagefilter1-说明filter1这个函数写入filters中这个函数接收一个message参数对其进行过滤">{{message|filter1}} :说明filter1这个函数写入filters:{}中，这个函数接收一个message参数，对其进行过滤。</h2>
+<h2 id="串联-更高级的操作">串联 更高级的操作</h2>
+<p>{{message|filter1|filter2}}</p>
+<h3 id="filter1帮助message过滤filter2帮助filter1进行文本的再过滤">filter1帮助message过滤，filter2帮助filter1进行文本的再过滤</h3>
 
             </div>
             
@@ -149,9 +119,9 @@ border-image-repeat:stretch,round,repeat;          图像是拉伸，平铺还�
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhaojunjie-code.github.io/post/css-te-yi-xing/">
+                <a href="https://zhaojunjie-code.github.io/post/css-zhong-ji-zong-jie/">
                   <h3 class="post-title">
-                    CSS-特异性
+                    CSS中级总结
                   </h3>
                 </a>
               </div>
