@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaojunjie-code.github.io/</id>
     <title>杰</title>
-    <updated>2021-05-06T08:40:49.331Z</updated>
+    <updated>2022-03-20T01:40:23.998Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaojunjie-code.github.io/"/>
     <link rel="self" href="https://zhaojunjie-code.github.io/atom.xml"/>
     <subtitle>前端探索</subtitle>
     <logo>https://zhaojunjie-code.github.io/images/avatar.png</logo>
     <icon>https://zhaojunjie-code.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 杰</rights>
+    <rights>All rights reserved 2022, 杰</rights>
     <entry>
         <title type="html"><![CDATA[axios]]></title>
         <id>https://zhaojunjie-code.github.io/post/axios/</id>
